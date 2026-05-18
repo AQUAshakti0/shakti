@@ -93,7 +93,7 @@ export default function Testimonials() {
     >
       <h2 className="testimonials-title">What Our Client Says</h2>
       <p className="testimonials-subtitle">
-        Customer satisfaction is a primary goal for our company, here is what our customers feel about our products!
+        Customer satisfaction is a primary goal for our company, here is what our customers feel about our products & Services!
       </p>
 
       <div className="testimonials-carousel">

@@ -133,7 +133,7 @@ export default function Chemicals() {
         <div className="row-text">
           <h2 className="section-heading">Descaling / Cleaning Treatment Products</h2>
           <p className="text-block">
-            To remove organic and inorganic foulants from process line, equipment &amp; surface cleaning process preferred.
+            To remove organic and inorganic foulants from process line, equipment &amp; surface Cleaning process preferred.
             For safe and uniform cleaning of deposits (scaling / rust) from the heat transfer surfaces without metal loss,
             our scale softener, descalant and passivator are highly effective in your process line.
           </p>
