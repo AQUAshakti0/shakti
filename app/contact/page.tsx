@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us — Get a Free Quote for Water Treatment Solutions",
@@ -45,29 +46,8 @@ export default function Contact() {
         </div>
         <div>
           <h2 className="section-heading">Send an Inquiry</h2>
-          <form className="contact-form">
-            <div className="field">
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" />
-            </div>
-            <div className="field">
-              <label htmlFor="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" />
-            </div>
-            <div className="field">
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" />
-            </div>
-            <div className="field">
-              <label htmlFor="subject">Subject</label>
-              <input type="text" id="subject" name="subject" />
-            </div>
-            <div className="field">
-              <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" rows={5}></textarea>
-            </div>
-            <button type="submit" className="submit-btn">Send Message</button>
-          </form>
+          <ContactForm />
+
         </div>
       </div>
 
