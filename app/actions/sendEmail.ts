@@ -4,7 +4,13 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function sendEmail(prevState: { success: boolean; message?: string; error?: string; } | undefined, formData: FormData) {
+export type EmailFormState = {
+  success: boolean;
+  message: string;
+  error: string;
+};
+
+export async function sendEmail(prevState: EmailFormState, formData: FormData) {
   console.log('sendEmail action triggered');
   console.log('RESEND_API_KEY present:', !!process.env.RESEND_API_KEY);
   
@@ -15,13 +21,13 @@ export async function sendEmail(prevState: { success: boolean; message?: string;
   const message = formData.get('message') as string;
 
   if (!name || !email || !message) {
-    return { success: false, error: 'Please fill in all required fields.' };
+    return { success: false, message: '', error: 'Please fill in all required fields.' };
   }
 
   const turnstileResponse = formData.get('cf-turnstile-response') as string;
 
   if (!turnstileResponse) {
-    return { success: false, error: 'Please complete the CAPTCHA.' };
+    return { success: false, message: '', error: 'Please complete the CAPTCHA.' };
   }
 
   // Verify Turnstile
@@ -37,11 +43,11 @@ export async function sendEmail(prevState: { success: boolean; message?: string;
     const verifyData = await verifyResponse.json();
 
     if (!verifyData.success) {
-      return { success: false, error: 'CAPTCHA verification failed. Please try again.' };
+      return { success: false, message: '', error: 'CAPTCHA verification failed. Please try again.' };
     }
   } catch (error) {
     console.error('Turnstile verification error:', error);
-    return { success: false, error: 'Failed to verify CAPTCHA.' };
+    return { success: false, message: '', error: 'Failed to verify CAPTCHA.' };
   }
 
   try {
@@ -65,13 +71,13 @@ export async function sendEmail(prevState: { success: boolean; message?: string;
 
     if (data.error) {
       console.error('Resend error:', data.error);
-      return { success: false, error: data.error.message };
+      return { success: false, message: '', error: data.error.message };
     }
 
-    return { success: true, message: 'Your message has been sent successfully!' };
+    return { success: true, message: 'Your message has been sent successfully!', error: '' };
   } catch (error: unknown) {
     console.error('Error sending email:', error);
     const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred.';
-    return { success: false, error: errorMessage };
+    return { success: false, message: '', error: errorMessage };
   }
 }

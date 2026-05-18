@@ -1,10 +1,10 @@
 'use client';
 
 import { useActionState } from 'react';
-import { sendEmail } from '@/app/actions/sendEmail';
+import { sendEmail, type EmailFormState } from '@/app/actions/sendEmail';
 import { Turnstile } from '@marsidev/react-turnstile';
 
-const initialState = {
+const initialState: EmailFormState = {
   success: false,
   message: '',
   error: '',
