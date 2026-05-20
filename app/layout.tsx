@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import BackToTop from "./components/BackToTop";
 
 export const metadata: Metadata = {
   title: {
@@ -227,7 +228,11 @@ export default function RootLayout({
           <main>{children}</main>
 
           <footer className="site-footer" role="contentinfo">
-            <span>&copy; 2007–{new Date().getFullYear()} Aqua Shakti Industries. All rights reserved.</span>
+            <span>
+              &copy; 2007–{new Date().getFullYear()} Aqua Shakti Industries. All rights reserved.
+              <span style={{ margin: "0 8px" }}>|</span>
+              <Link href="/privacy-policy" style={{ color: "inherit", textDecoration: "underline" }}>Privacy Policy</Link>
+            </span>
             <span>ISO 9001:2008 Certified &middot; WAPTAG Member</span>
             <span>Designed &amp; Developed by <a href="https://www.davlabs.in" target="_blank" rel="noopener noreferrer" style={{ color: '#000000', textDecoration: 'none', fontWeight: 700 }}>DAVLabs</a></span>
           </footer>
@@ -245,6 +250,9 @@ export default function RootLayout({
             <path d="M16.003 2.667A13.233 13.233 0 002.667 15.87a13.12 13.12 0 001.97 6.93L2.667 29.333l6.74-1.92a13.3 13.3 0 006.596 1.747h.006A13.24 13.24 0 0029.333 15.87 13.24 13.24 0 0016.003 2.667zm0 24.24a11.03 11.03 0 01-5.59-1.523l-.4-.237-4.15 1.183 1.107-4.047-.26-.413A10.87 10.87 0 014.89 15.87a11.01 11.01 0 0111.113-10.913 11.01 11.01 0 0111.107 10.913 11.02 11.02 0 01-11.107 11.037zm6.04-8.247c-.33-.167-1.96-.967-2.263-1.077-.307-.113-.527-.167-.75.167-.22.333-.857 1.077-1.05 1.297-.193.22-.387.247-.717.083-.33-.167-1.393-.513-2.653-1.637-.98-.873-1.643-1.953-1.837-2.283-.193-.333-.02-.513.147-.68.15-.147.33-.387.497-.58.167-.193.22-.333.333-.553.113-.22.057-.413-.03-.58-.083-.167-.75-1.807-1.027-2.473-.27-.653-.547-.563-.75-.573-.193-.01-.417-.013-.64-.013a1.23 1.23 0 00-.89.417c-.307.333-1.17 1.143-1.17 2.787 0 1.643 1.197 3.23 1.363 3.453.167.22 2.357 3.6 5.71 5.05.797.347 1.42.553 1.903.707.8.253 1.527.217 2.103.133.64-.097 1.96-.803 2.237-1.577.277-.773.277-1.437.193-1.577-.083-.137-.303-.22-.637-.387z" fill="#ffffff"/>
           </svg>
         </a>
+
+        {/* Back to Top Floating Button */}
+        <BackToTop />
       </body>
     </html>
   );
