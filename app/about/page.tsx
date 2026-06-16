@@ -4,7 +4,7 @@ import Testimonials from "../components/Testimonials";
 export const metadata: Metadata = {
   title: "About Us — Company Profile, Team & Mission",
   description:
-    "Learn about Aqua Shakti Industries, ISO 9001:2008 certified water treatment plant manufacturer in Vapi, Gujarat since 2007. 500+ customers trust us.",
+    "Learn about Aqua Shakti Industries, ISO 9001:2015 certified water treatment plant manufacturer in Vapi, Gujarat since 2007. 500+ customers trust us.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Aqua Shakti Industries — Trusted Since 2007",
@@ -23,7 +23,7 @@ export default function About() {
           <h2 className="section-heading">Company Profile</h2>
           <p className="text-block">
             Established in the year 2007, in Vapi, Valsad (Gujarat, India) Aqua Shakti Industries 
-            An ISO 9001:2008 certified company is known to be one of the leading manufacturer, 
+            An ISO 9001:2015 certified company is known to be one of the leading manufacturer, 
             supplier and service provider of all kinds of Water Treatment Plants. By focusing our 
             attention on the fulfillment of the exact needs of the customers, we have been able to 
             carve a niche for ourselves in the industry.

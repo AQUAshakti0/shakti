@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="page-content">
       <h1 className="page-title">Privacy Policy</h1>
-      
+
       <div className="text-block" style={{ maxWidth: '100%' }}>
         <p><strong>Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</strong></p>
         <br />
@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
         <p>
           If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
         </p>
-        
+
         <h2 className="section-heading" style={{ marginTop: '30px' }}>Information We Collect</h2>
         <p>
           The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.

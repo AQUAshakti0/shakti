@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Aqua Shakti Industries",
   },
   description:
-    "Aqua Shakti Industries is a leading ISO 9001:2008 certified manufacturer, supplier & service provider of Industrial RO Plants, STP, ETP, Boiler Plants & Water Treatment Chemicals in Vapi, Gujarat, India. 500+ customers since 2007.",
+    "Aqua Shakti Industries is a leading ISO 9001:2015 certified manufacturer, supplier & service provider of Industrial RO Plants, STP, ETP, Boiler Plants & Water Treatment Chemicals in Vapi, Gujarat, India. 500+ customers since 2007.",
   keywords: [
     "water treatment plant manufacturer",
     "RO plant manufacturer Vapi",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "Aqua Shakti Industries",
     title: "Aqua Shakti Industries — Water Treatment Plant Manufacturer in Vapi, Gujarat",
     description:
-      "Leading manufacturer of Industrial RO, STP, ETP, Boiler Plants & Water Treatment Chemicals. ISO 9001:2008 certified. 500+ customers in Gujarat since 2007.",
+      "Leading manufacturer of Industrial RO, STP, ETP, Boiler Plants & Water Treatment Chemicals. ISO 9001:2015 certified. 500+ customers in Gujarat since 2007.",
     images: [
       {
         url: "/ro-plant.png",
@@ -168,7 +168,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
         {/* Favicon & App Icons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/logo.png" sizes="any" />
         <meta name="theme-color" content="#1a5fb4" />
 
         {/* Geo meta tags for local SEO */}
@@ -203,7 +203,7 @@ export default function RootLayout({
             <nav className="topbar" aria-label="Main navigation">
               <Link href="/" className="topbar-left" aria-label="Aqua Shakti Industries - Home">
                 <img
-                  src="/logo.png"
+                  src="/logo.png?v=2"
                   alt="Aqua Shakti Industries Logo"
                   className="topbar-logo"
                   width={44}
@@ -211,8 +211,8 @@ export default function RootLayout({
                   loading="eager"
                 />
                 <div className="topbar-brand">
-                  Aqua Shakti Industries
-                  <span>Water Treatment Plant & Chemicals</span>
+                  AQUASHAKTI
+                  <span>INDUSTRIES PRIVATE LIMITED</span>
                 </div>
               </Link>
               <ul className="topbar-nav" role="menubar">
@@ -233,7 +233,7 @@ export default function RootLayout({
               <span style={{ margin: "0 8px" }}>|</span>
               <Link href="/privacy-policy" style={{ color: "inherit", textDecoration: "underline" }}>Privacy Policy</Link>
             </span>
-            <span>ISO 9001:2008 Certified &middot; WAPTAG Member</span>
+            <span>ISO 9001:2015 Certified &middot; WAPTAG Member</span>
             <span>Designed &amp; Developed by <a href="https://www.davlabs.in" target="_blank" rel="noopener noreferrer" style={{ color: '#000000', textDecoration: 'none', fontWeight: 700 }}>DAVLabs</a></span>
           </footer>
         </div>

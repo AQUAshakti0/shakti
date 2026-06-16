@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aqua Shakti Industries — Industrial Water Treatment Solutions",
     description:
-      "ISO 9001:2008 certified manufacturer of RO Plants, STP, ETP, Boiler Plants & Water Treatment Chemicals in Vapi, Gujarat. Get a free consultation today.",
+      "ISO 9001:2015 certified manufacturer of RO Plants, STP, ETP, Boiler Plants & Water Treatment Chemicals in Vapi, Gujarat. Get a free consultation today.",
     url: "https://www.aquashakti.in",
     images: [{ url: "/ro-plant.png", width: 1200, height: 630, alt: "Industrial RO Plant by Aqua Shakti" }],
   },
@@ -110,7 +110,7 @@ export default function Home() {
             <span>Established Excellence</span>
           </div>
           <div className="stat-item">
-            <strong>ISO 9001:2008</strong>
+            <strong>ISO 9001:2015</strong>
             <span>Certified Company</span>
           </div>
           <div className="stat-item">

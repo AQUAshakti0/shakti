@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us — Get a Free Quote for Water Treatment Solutions",
   description:
-    "Contact Aqua Shakti Industries in Vapi, Gujarat for water treatment plant inquiries. Call +91-6356008844 or email info@aquashaktiipl.com. ISO 9001:2008 certified.",
+    "Contact Aqua Shakti Industries in Vapi, Gujarat for water treatment plant inquiries. Call +91-6356008844 or email info@aquashaktiipl.com. ISO 9001:2015 certified.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact Aqua Shakti Industries — Water Treatment Experts",
@@ -39,7 +39,7 @@ export default function Contact() {
 
           <h2 className="section-heading">Certifications</h2>
           <ul className="plain-list">
-            <li>ISO 9001:2008 Certified Company</li>
+            <li>ISO 9001:2015 Certified Company</li>
             <li>WAPTAG Member</li>
             <li>Make in India</li>
           </ul>
