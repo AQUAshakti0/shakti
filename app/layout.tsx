@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import BackToTop from "./components/BackToTop";
+import Navbar from "./components/Navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -199,31 +200,7 @@ export default function RootLayout({
         </div>
 
         <div className="site-wrap">
-          <header>
-            <nav className="topbar" aria-label="Main navigation">
-              <Link href="/" className="topbar-left" aria-label="Aqua Shakti Industries - Home">
-                <img
-                  src="/logo.png?v=2"
-                  alt="Aqua Shakti Industries Logo"
-                  className="topbar-logo"
-                  width={44}
-                  height={44}
-                  loading="eager"
-                />
-                <div className="topbar-brand">
-                  AQUASHAKTI
-                  <span>INDUSTRIES PRIVATE LIMITED</span>
-                </div>
-              </Link>
-              <ul className="topbar-nav" role="menubar">
-                <li role="none"><Link href="/" role="menuitem">Home</Link></li>
-                <li role="none"><Link href="/about" role="menuitem">About</Link></li>
-                <li role="none"><Link href="/products" role="menuitem">Products</Link></li>
-                <li role="none"><Link href="/chemicals" role="menuitem">Chemicals</Link></li>
-                <li role="none"><Link href="/contact" role="menuitem">Contact</Link></li>
-              </ul>
-            </nav>
-          </header>
+          <Navbar />
 
           <main>{children}</main>
 

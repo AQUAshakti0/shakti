@@ -177,6 +177,26 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2px;
 }
 
+/* ---- HAMBURGER MENU ---- */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 100;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: #1a5fb4;
+  border-radius: 3px;
+}
+
 /* ---- NAV WITH SMOOTH HOVER ---- */
 .topbar-nav {
   display: flex;
@@ -668,25 +688,61 @@ tr:last-child td {
   }
 
   .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 12px 0;
+    position: relative;
   }
 
   .topbar-brand {
     font-size: 18px;
   }
 
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
   .topbar-nav {
-    gap: 2px;
-    flex-wrap: wrap;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    right: -16px;
+    background-color: #ffffff;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    padding: 10px 16px;
+    z-index: 90;
+    border-top: 1px solid #e8eff5;
+  }
+
+  .topbar-nav.open {
+    display: flex;
   }
 
   .topbar-nav a {
-    font-size: 12px;
-    padding: 6px 8px;
-    letter-spacing: 0.3px;
+    font-size: 14px;
+    padding: 12px 10px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e8eff5;
+  }
+
+  .topbar-nav li:last-child a {
+    border-bottom: none;
   }
 
   .slide img {
@@ -827,10 +883,7 @@ tr:last-child td {
     height: 36px;
   }
 
-  .topbar-nav a {
-    font-size: 11px;
-    padding: 5px 6px;
-  }
+
 
   .slide img {
     height: 160px;
