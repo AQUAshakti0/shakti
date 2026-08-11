@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <rect width="320" height="100" fill="#ffffff" rx="8"/>
+  <g transform="translate(45, 12)">
+    <!-- Vertical outer bar lines -->
+    <rect x="25" y="10" width="10" height="55" fill="#94a3b8"/>
+    <rect x="195" y="10" width="10" height="55" fill="#94a3b8"/>
+    <!-- Parallelogram badge background border -->
+    <polygon points="55,10 180,10 165,65 40,65" fill="none" stroke="#1e293b" stroke-width="4"/>
+    <!-- Red & Black SP logo path -->
+    <polygon points="65,18 125,18 105,57 45,57" fill="#1e293b"/>
+    <polygon points="110,18 170,18 155,57 95,57" fill="#dc2626"/>
+    <!-- Cutout SP shape -->
+    <path d="M 68 25 C 95 25 80 40 98 40 C 110 40 105 50 85 50" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 125 25 L 125 50 M 125 25 L 150 25 C 160 25 160 38 145 38 L 125 38" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

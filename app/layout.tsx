@@ -1,63 +1,54 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import "./globals.css";
-import BackToTop from "./components/BackToTop";
 import Navbar from "./components/Navbar";
+import BackToTop from "./components/BackToTop";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Aqua Shakti Industries — Water Treatment Plant Manufacturer in Vapi, Gujarat",
+    default: "Aqua Shakti Industries — Industrial RO Plant, ETP, STP & Water Treatment Manufacturer",
     template: "%s | Aqua Shakti Industries",
   },
-  description:
-    "Aqua Shakti Industries is a leading ISO 9001:2015 certified manufacturer, supplier & service provider of Industrial RO Plants, STP, ETP, Boiler Plants & Water Treatment Chemicals in Vapi, Gujarat, India. 500+ customers since 2007.",
+  description: "Aqua Shakti Industries is a leading manufacturer of Industrial RO Plants, Effluent Treatment Plants (ETP), Sewage Treatment Plants (STP), Water Softeners & Specialty Water Chemicals in Vapi, Gujarat, India.",
   keywords: [
-    "water treatment plant manufacturer",
-    "RO plant manufacturer Vapi",
-    "industrial RO plant Gujarat",
-    "STP plant manufacturer India",
-    "ETP plant manufacturer",
-    "boiler plant manufacturer",
-    "water treatment chemicals",
-    "ASTreat chemicals",
-    "water softener plant",
-    "DM plant manufacturer",
-    "domestic RO system",
     "Aqua Shakti Industries",
-    "water treatment Vapi Gujarat",
-    "ISO certified water treatment",
-    "industrial water purification",
+    "Industrial RO Plant Manufacturer",
+    "ETP Plant Manufacturer Vapi",
+    "STP Plant Manufacturer Gujarat",
+    "Water Treatment Chemicals",
+    "DM Plant Manufacturer",
+    "Water Softener Plant",
+    "Boiler Chemical Supplier",
+    "Cooling Tower Chemical",
+    "Water Treatment Company Vapi",
   ],
-  authors: [{ name: "Aqua Shakti Industries" }],
-  creator: "DAVLabs",
+  authors: [{ name: "Aqua Shakti Industries", url: "https://www.aquashakti.in" }],
+  creator: "Aqua Shakti Industries",
   publisher: "Aqua Shakti Industries",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   metadataBase: new URL("https://www.aquashakti.in"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    type: "website",
-    locale: "en_IN",
+    title: "Aqua Shakti Industries — Water & Wastewater Treatment Solutions",
+    description: "ISO 9001:2015 Certified Manufacturer of Industrial RO, ETP, STP Plants & Specialty Chemicals in Gujarat, India.",
     url: "https://www.aquashakti.in",
     siteName: "Aqua Shakti Industries",
-    title: "Aqua Shakti Industries — Water Treatment Plant Manufacturer in Vapi, Gujarat",
-    description:
-      "Leading manufacturer of Industrial RO, STP, ETP, Boiler Plants & Water Treatment Chemicals. ISO 9001:2015 certified. 500+ customers in Gujarat since 2007.",
+    locale: "en_IN",
+    type: "website",
     images: [
       {
-        url: "/ro-plant.png",
-        width: 1200,
-        height: 630,
-        alt: "Aqua Shakti Industries - Industrial Water Treatment Plant",
+        url: "/logo.png",
+        width: 800,
+        height: 600,
+        alt: "Aqua Shakti Industries Logo",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Aqua Shakti Industries — Water Treatment Plant Manufacturer",
-    description:
-      "Leading manufacturer of Industrial RO, STP, ETP, Boiler Plants & Water Treatment Chemicals in Vapi, Gujarat.",
-    images: ["/ro-plant.png"],
   },
   robots: {
     index: true,
@@ -70,86 +61,47 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    // Add your Google Search Console verification code here
-    // google: "your-verification-code",
-  },
-  category: "Industrial Manufacturing",
 };
 
-// JSON-LD Structured Data
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Aqua Shakti Industries",
-  url: "https://www.aquashakti.in",
-  logo: "https://www.aquashakti.in/logo.png",
-  description:
-    "Leading manufacturer, supplier & service provider of Industrial RO Plants, STP, ETP, Boiler Plants & Water Treatment Chemicals.",
-  foundingDate: "2007",
-  address: {
+  "@type": "LocalBusiness",
+  "name": "Aqua Shakti Industries",
+  "image": "https://www.aquashakti.in/logo.png",
+  "@id": "https://www.aquashakti.in",
+  "url": "https://www.aquashakti.in",
+  "telephone": "+916356008844",
+  "priceRange": "₹₹₹",
+  "address": {
     "@type": "PostalAddress",
-    streetAddress: "Vapi Timber Compound, Opp. Chandralok Tower, Nr. D Mart, Chanod, G.I.D.C.",
-    addressLocality: "Vapi",
-    addressRegion: "Gujarat",
-    postalCode: "396195",
-    addressCountry: "IN",
+    "streetAddress": "Plot No. 123, GIDC Industrial Estate",
+    "addressLocality": "Vapi",
+    "addressRegion": "Gujarat",
+    "postalCode": "396195",
+    "addressCountry": "IN"
   },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+91-6356008844",
-    contactType: "sales",
-    email: "info@aquashaktiipl.com",
-    areaServed: "IN",
-    availableLanguage: ["English", "Hindi", "Gujarati"],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 20.3721,
+    "longitude": 72.9106
   },
-  sameAs: [],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Water Treatment Solutions",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Product",
-          name: "Industrial RO Plant",
-          description: "Custom-designed reverse osmosis systems for industrial water purification",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Product",
-          name: "STP Plant",
-          description: "Sewage treatment plants compliant with international standards",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Product",
-          name: "ETP Plant",
-          description: "Effluent treatment plant for design, operation and analysis of waste water",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Product",
-          name: "Boiler Plant",
-          description: "Energy-efficient boiler systems with advanced controls",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Product",
-          name: "Water Treatment Chemicals",
-          description: "ASTreat range of chemicals for boiler, RO, and effluent treatment",
-        },
-      },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
     ],
+    "opens": "09:00",
+    "closes": "19:00"
   },
+  "sameAs": [
+    "https://www.facebook.com/aquashakti",
+    "https://www.linkedin.com/company/aquashakti"
+  ]
 };
 
 export default function RootLayout({
@@ -160,55 +112,51 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preconnect to Google Fonts for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-        {/* DNS Prefetch for external resources */}
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-
-        {/* Favicon & App Icons */}
         <link rel="icon" href="/logo.png" sizes="any" />
         <meta name="theme-color" content="#1a5fb4" />
-
-        {/* Geo meta tags for local SEO */}
         <meta name="geo.region" content="IN-GJ" />
         <meta name="geo.placename" content="Vapi, Gujarat" />
-
-        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>
-        {/* Top Info Strip */}
-        <div className="info-strip" role="banner">
-          <div className="info-strip-inner">
-            <span>
-              <a href="tel:+916356008844" style={{ color: 'inherit', textDecoration: 'none' }}>
-                Phone: +91-6356008844
-              </a>
-            </span>
-            <span>
-              <a href="mailto:info@aquashaktiipl.com" style={{ color: 'inherit', textDecoration: 'none' }}>
-                Email: info@aquashaktiipl.com
-              </a>
-            </span>
-          </div>
-        </div>
-
+        <Navbar />
         <div className="site-wrap">
-          <Navbar />
-
           <main>{children}</main>
+
+          {/* Call to Action Strip (Flat Page-Stuck Buttons, Zero Border, Color Hover) */}
+          <section className="cta-strip" aria-label="Contact call to action">
+            <div className="cta-strip-inner">
+              <div>
+                <h2 className="cta-title">Need a Water Treatment Solution?</h2>
+                <p className="cta-subtitle">Get in touch for a free consultation and customized quote.</p>
+              </div>
+              <div className="cta-actions">
+                <Link href="/contact" className="cta-flat-btn cta-btn-primary">
+                  Get a Quote
+                </Link>
+                <a href="tel:+916356008844" className="cta-flat-btn cta-btn-call">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  Call: +91-6356008844
+                </a>
+              </div>
+            </div>
+          </section>
 
           <footer className="site-footer" role="contentinfo">
             <span>
               &copy; 2007–{new Date().getFullYear()} Aqua Shakti Industries. All rights reserved.
               <span style={{ margin: "0 8px" }}>|</span>
-              <Link href="/privacy-policy" style={{ color: "inherit", textDecoration: "underline" }}>Privacy Policy</Link>
+              <Link href="/privacy-policy" style={{ color: "inherit", textDecoration: "none" }}>Privacy Policy</Link>
             </span>
             <span>ISO 9001:2015 Certified &middot; WAPTAG Member</span>
             <span>Designed &amp; Developed by <a href="https://www.davlabs.in" target="_blank" rel="noopener noreferrer" style={{ color: '#000000', textDecoration: 'none', fontWeight: 700 }}>DAVLabs</a></span>

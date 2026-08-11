@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <rect width="320" height="100" fill="#ffffff" rx="8"/>
+  <g transform="translate(45, 10)">
+    <!-- Cyan Swirl Infinity Ring -->
+    <ellipse cx="115" cy="22" rx="22" ry="12" fill="none" stroke="#009688" stroke-width="4" transform="rotate(-25 115 22)"/>
+    <path d="M 100 24 C 110 12 125 14 130 26" fill="none" stroke="#009688" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Text sterling GENERATORS -->
+    <text x="115" y="52" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="800" font-size="24" fill="#0f172a" letter-spacing="-0.5">sterling</text>
+    <text x="115" y="66" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="10" fill="#0284c7" letter-spacing="2">GENERATORS</text>
+    
+    <!-- Tagline positively wired -->
+    <line x1="20" y1="74" x2="210" y2="74" stroke="#0284c7" stroke-width="1"/>
+    <text x="115" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="10" fill="#0f172a" letter-spacing="1">positively wired</text>
+  </g>
+</svg>

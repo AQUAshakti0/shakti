@@ -1,171 +1,214 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import React from "react";
 
-const testimonials = [
+export interface ReviewCardItem {
+  id: number;
+  variant: "pastel" | "white" | "watercolor" | "magenta";
+  name: string;
+  company: string;
+  rating: string;
+  headline: string;
+  reviewText: string;
+  iconBg: string;
+}
+
+const reviewsData: ReviewCardItem[] = [
   {
-    name: "John S Odell",
-    role: "Customer",
-    stars: 4,
-    text: "Aquashakti Water Solution is very specializes in providing hi-tech reverse osmosis plants at the most affordable rates. Their excellent quality water plants prove the name itself. Their RO Plant solves all your hard water problems and many more.",
-  },
-  {
+    id: 1,
+    variant: "pastel",
     name: "Rajesh Patel",
-    role: "Industrial Client",
-    stars: 5,
-    text: "We have been using Aqua Shakti's ETP plant for over 3 years now. The quality of treated water consistently meets Pollution Control Board norms. Their after-sales service is exceptional and response time is very quick.",
+    company: "GIDC Chemical Unit, Vapi",
+    rating: "5.0",
+    headline: "Amazing Industrial RO Plant",
+    reviewText: "Aqua Shakti provides top-tier industrial RO systems with exceptional water recovery. Clean installation and unmatched technical support.",
+    iconBg: "linear-gradient(135deg, #0b3c26 0%, #115033 100%)"
   },
   {
-    name: "Suresh Mehta",
-    role: "Hotel Owner",
-    stars: 5,
-    text: "Installed their commercial RO system in our hotel chain. The water quality has improved dramatically and our guests are very satisfied. Aqua Shakti team is professional, knowledgeable and always available for support.",
+    id: 2,
+    variant: "white",
+    name: "Suresh Shah",
+    company: "Pharma Formulations, Ankleshwar",
+    rating: "4.9",
+    headline: "Exceptional ETP Performance",
+    reviewText: "Their 24/7 effluent treatment plant running in our pharmaceutical unit has reduced operational downtime and maintenance costs significantly.",
+    iconBg: "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)"
   },
   {
+    id: 3,
+    variant: "magenta",
+    name: "Vikram Desai",
+    company: "Lords Hotels & Resorts, Surat",
+    rating: "4.9",
+    headline: "Zero Downtime & Pure Output",
+    reviewText: "Installed their commercial water softening plant for our resort. Water purity is outstanding and after-sales service is truly unmatched.",
+    iconBg: "rgba(255, 255, 255, 0.25)"
+  },
+  {
+    id: 4,
+    variant: "watercolor",
     name: "Amit Sharma",
-    role: "Factory Manager",
-    stars: 4,
-    text: "Their boiler water treatment chemicals have significantly reduced scaling and corrosion in our systems. Production downtime has decreased by 40%. Highly recommend their ASTreat product range for industrial applications.",
-  },
+    company: "Blue Star Manufacturing, Ahmedabad",
+    rating: "5.0",
+    headline: "Top Water Treatment Partner",
+    reviewText: "Specialty chemicals from Aqua Shakti solved all our boiler scaling issues. Highly professional team and fast delivery across Gujarat.",
+    iconBg: "rgba(255, 255, 255, 0.25)"
+  }
 ];
 
-const AUTO_SLIDE_MS = 3500;
-const ANIMATION_MS = 500;
+function UserIcon({ bg = "#0b3c26", size = 48 }: { bg?: string; size?: number }) {
+  const iconSize = Math.round(size * 0.52);
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        borderRadius: "50%",
+        background: bg,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexShrink: 0,
+        border: "2px solid #ffffff",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.12)"
+      }}
+    >
+      <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </svg>
+    </div>
+  );
+}
 
 export default function Testimonials() {
-  const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const [animClass, setAnimClass] = useState("testimonial-card-enter");
-  const isAnimating = useRef(false);
-
-  const slideTo = useCallback((nextIndex: number, direction: "left" | "right") => {
-    if (isAnimating.current) return;
-    isAnimating.current = true;
-
-    // Exit animation
-    setAnimClass(direction === "left" ? "testimonial-card-exit-left" : "testimonial-card-exit-right");
-
-    setTimeout(() => {
-      setCurrent(nextIndex);
-      // Enter animation from opposite side
-      setAnimClass(direction === "left" ? "testimonial-card-enter-right" : "testimonial-card-enter-left");
-
-      // Small delay to trigger the enter transition
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setAnimClass("testimonial-card-enter");
-          setTimeout(() => {
-            isAnimating.current = false;
-          }, ANIMATION_MS);
-        });
-      });
-    }, ANIMATION_MS);
-  }, []);
-
-  const next = useCallback(() => {
-    const nextIndex = current === testimonials.length - 1 ? 0 : current + 1;
-    slideTo(nextIndex, "left");
-  }, [current, slideTo]);
-
-  const prev = useCallback(() => {
-    const nextIndex = current === 0 ? testimonials.length - 1 : current - 1;
-    slideTo(nextIndex, "right");
-  }, [current, slideTo]);
-
-  const goTo = useCallback((index: number) => {
-    if (index === current) return;
-    slideTo(index, index > current ? "left" : "right");
-  }, [current, slideTo]);
-
-  useEffect(() => {
-    if (paused) return;
-    const id = setInterval(next, AUTO_SLIDE_MS);
-    return () => clearInterval(id);
-  }, [paused, current, next]);
-
-  const t = testimonials[current];
-
   return (
-    <section
-      className="testimonials-section"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
-      <h2 className="testimonials-title">What Our Client Says</h2>
-      <p className="testimonials-subtitle">
-        Customer satisfaction is a primary goal for our company, here is what our customers feel about our products & Services!
-      </p>
-
-      <div className="testimonials-carousel">
-        {/* Left Arrow */}
-        <button className="testimonial-arrow testimonial-arrow-left" onClick={prev} aria-label="Previous testimonial">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
-
-        {/* Card */}
-        <div className={`testimonial-card ${animClass}`}>
-          {/* Open quote */}
-          <span className="testimonial-quote testimonial-quote-open">&ldquo;</span>
-
-          {/* Avatar */}
-          <div className="testimonial-avatar">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="24" fill="#e8eff5" />
-              <circle cx="24" cy="18" r="7" fill="#92b4c8" />
-              <path d="M10 42c0-7.732 6.268-14 14-14s14 6.268 14 14" fill="#92b4c8" />
-            </svg>
-          </div>
-
-          <h3 className="testimonial-name">{t.name}</h3>
-          <span className="testimonial-role">{t.role}</span>
-
-          {/* Stars */}
-          <div className="testimonial-stars">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <svg key={i} className={i < t.stars ? "star-filled" : "star-empty"} viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.27 5.06 16.7 6 11.21l-4-3.9 5.53-.8L10 1.5z" />
-              </svg>
-            ))}
-          </div>
-
-          <p className="testimonial-text">{t.text}</p>
-
-          {/* Close quote */}
-          <span className="testimonial-quote testimonial-quote-close">&rdquo;</span>
-        </div>
-
-        {/* Right Arrow */}
-        <button className="testimonial-arrow testimonial-arrow-right" onClick={next} aria-label="Next testimonial">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
+    <section className="customer-reviews-section" aria-label="Customer Reviews" style={{ margin: "60px 0 40px 0" }}>
+      {/* Centered Header matching reference image */}
+      <div style={{ textAlign: "center", marginBottom: "36px" }}>
+        <h2 className="section-heading" style={{ color: "#2d3748", fontSize: "32px", fontWeight: 800, margin: "0 0 6px 0", fontFamily: "'Inter', sans-serif" }}>
+          Customers Review
+        </h2>
+        <p style={{ color: "#718096", fontSize: "15px", margin: "0 auto", maxWidth: "600px" }}>
+          What our customers say about Aqua Shakti Industries
+        </p>
       </div>
 
-      {/* Progress Dots */}
-      <div className="testimonial-dots">
-        {testimonials.map((_, i) => (
-          <button
-            key={i}
-            className={`testimonial-dot ${i === current ? "testimonial-dot-active" : ""}`}
-            onClick={() => goTo(i)}
-            aria-label={`Go to testimonial ${i + 1}`}
-          />
-        ))}
-      </div>
+      {/* 4 Unique Cards Grid with Indian Names & User Icons */}
+      <div className="reviews-cards-grid">
+        {reviewsData.map((item) => {
+          if (item.variant === "pastel") {
+            return (
+              <div key={item.id} className="review-card card-pastel">
+                {/* Top Row: Icon Avatar + Name + Rating */}
+                <div className="card-top-row">
+                  <div className="avatar-wrapper">
+                    <UserIcon bg={item.iconBg} size={50} />
+                    <div className="quote-bubble-badge">❝</div>
+                  </div>
+                  <div>
+                    <h4 className="reviewer-name">{item.name}</h4>
+                    <span className="reviewer-company">{item.company}</span>
+                    <div className="star-rating-row">
+                      {"★".repeat(5)}
+                    </div>
+                  </div>
+                </div>
 
-      {/* Auto-slide progress bar */}
-      <div className="testimonial-progress-track">
-        <div
-          className="testimonial-progress-bar"
-          key={current}
-          style={{
-            animationDuration: `${AUTO_SLIDE_MS}ms`,
-            animationPlayState: paused ? "paused" : "running",
-          }}
-        />
+                {/* Body Content */}
+                <div className="card-body-content">
+                  <h3 className="card-headline">{item.headline}</h3>
+                  <p className="card-review-text">{item.reviewText}</p>
+                </div>
+              </div>
+            );
+          }
+
+          if (item.variant === "white") {
+            return (
+              <div key={item.id} className="review-card card-white">
+                {/* Top Badge */}
+                <div className="card-top-badge-row">
+                  <div className="quote-bubble-badge">❝</div>
+                </div>
+
+                {/* Body Content */}
+                <div className="card-body-content">
+                  <h3 className="card-headline">{item.headline}</h3>
+                  <p className="card-review-text">{item.reviewText}</p>
+                </div>
+
+                {/* Bottom Row: Icon Avatar + Name */}
+                <div className="card-bottom-row">
+                  <UserIcon bg={item.iconBg} size={42} />
+                  <div>
+                    <h4 className="reviewer-name-sm">{item.name}</h4>
+                    <span className="reviewer-company-sm">{item.company}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          if (item.variant === "watercolor") {
+            return (
+              <div key={item.id} className="review-card card-watercolor">
+                {/* Unique Water Caustics / Bubble Ring Background Overlay */}
+                <div className="water-texture-overlay" />
+
+                {/* Top Row: Quote Badge + Rating Badge */}
+                <div className="card-top-badge-row" style={{ position: "relative", zIndex: 2 }}>
+                  <div className="quote-bubble-badge">❝</div>
+                  <div className="rating-pill-badge">{item.rating} ★</div>
+                </div>
+
+                {/* Body Content */}
+                <div className="card-body-content" style={{ position: "relative", zIndex: 2 }}>
+                  <h3 className="card-headline light-text">{item.headline}</h3>
+                  <p className="card-review-text light-text">{item.reviewText}</p>
+                </div>
+
+                {/* Bottom Row: Icon Avatar + Name */}
+                <div className="card-bottom-row" style={{ position: "relative", zIndex: 2 }}>
+                  <UserIcon bg={item.iconBg} size={42} />
+                  <div>
+                    <h4 className="reviewer-name-sm light-text">{item.name}</h4>
+                    <span className="reviewer-company-sm light-text-muted">{item.company}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          if (item.variant === "magenta") {
+            return (
+              <div key={item.id} className="review-card card-magenta">
+                {/* Top Row: Quote Badge + Rating Badge */}
+                <div className="card-top-badge-row">
+                  <div className="quote-bubble-badge white-badge">❝</div>
+                  <div className="rating-pill-badge">{item.rating} ★</div>
+                </div>
+
+                {/* Body Content */}
+                <div className="card-body-content">
+                  <h3 className="card-headline light-text">{item.headline}</h3>
+                  <p className="card-review-text light-text">{item.reviewText}</p>
+                </div>
+
+                {/* Bottom Row: Icon Avatar + Name */}
+                <div className="card-bottom-row">
+                  <UserIcon bg={item.iconBg} size={42} />
+                  <div>
+                    <h4 className="reviewer-name-sm light-text">{item.name}</h4>
+                    <span className="reviewer-company-sm light-text-muted">{item.company}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return null;
+        })}
       </div>
     </section>
   );

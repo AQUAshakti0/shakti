@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <rect width="320" height="100" fill="#ffffff" rx="8"/>
+  <g transform="translate(20, 32)">
+    <text x="30" y="32" font-family="'Inter', sans-serif" font-weight="900" font-size="34" fill="#b91c1c" letter-spacing="1">STI</text>
+    <text x="95" y="32" font-family="'Inter', sans-serif" font-weight="900" font-size="28" fill="#0f172a" letter-spacing="1.5">INDUSTRIES</text>
+  </g>
+</svg>

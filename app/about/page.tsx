@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Testimonials from "../components/Testimonials";
+import MissionAndUsage from "../components/MissionAndUsage";
 
 export const metadata: Metadata = {
   title: "About Us — Company Profile, Team & Mission",
@@ -42,8 +43,8 @@ export default function About() {
             and procedures. We have more than 500 customers in Gujarat - India.
           </p>
         </div>
-        <div className="row-img">
-          <img src="/ro-plant.png" alt="Industrial Water Treatment Plant by Aqua Shakti" width={420} height={300} loading="lazy" />
+        <div className="row-img" style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "36px" }}>
+          <img src="/clients/Aquashakti%20logo.png" alt="Aqua Shakti Industries Logo" width={420} height={300} style={{ objectFit: "contain", maxHeight: "270px", width: "auto" }} loading="lazy" />
         </div>
       </section>
 
@@ -65,49 +66,39 @@ export default function About() {
             <li>Research and development executives</li>
           </ul>
         </div>
-        <div className="row-img">
-          <img src="/boiler-system.png" alt="Boiler System by Aqua Shakti" width={420} height={300} loading="lazy" />
+        <div className="row-img" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <img src="/our_team.png?v=2" alt="Our Team at Aqua Shakti" width={420} height={300} style={{ objectFit: "contain", maxHeight: "270px", width: "auto" }} loading="lazy" />
         </div>
       </section>
 
-      <section>
-        <h2 className="section-heading">Our Mission</h2>
-        <p className="text-block">
-          We will work with clear and strategic market focus for providing customer centric solutions 
-          and services. Keeping pace with latest technological developments, we will combine our own 
-          innovative thinking to build solutions and services for strong competitive position. Through 
-          intense process and methods orientation we will ensure continuous operational improvements 
-          to provide value to the customers. High employee motivation and continued value creation 
-          for stakeholders will help us continuously tread the progressive path.
-        </p>
-      </section>
+      {/* Modern Our Mission & Area of Usage Section */}
+      <MissionAndUsage showReadMore={false} />
 
-      <div className="two-col">
-        <div>
-          <h2 className="section-heading">Why Us</h2>
-          <ul className="plain-list">
-            <li>Transparent business dealings</li>
-            <li>Reasonable prices</li>
-            <li>Latest technology products</li>
-            <li>Timely delivery</li>
-            <li>Best service After sales</li>
-            <li>Customization facility</li>
-            <li>State of art infrastructure</li>
-            <li>Efficient workforce easy in operation, and maintenance</li>
-          </ul>
+      {/* Why Us Section */}
+      <section style={{ margin: "40px 0 50px 0" }}>
+        <h2 className="section-heading">Why Us</h2>
+        <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "12px", padding: "28px 32px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
+            {[
+              "Transparent business dealings",
+              "Reasonable prices",
+              "Latest technology products",
+              "Timely delivery",
+              "Best service After sales",
+              "Customization facility",
+              "State of art infrastructure",
+              "Efficient workforce easy in operation, and maintenance"
+            ].map((item, index) => (
+              <div key={index} style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "14px", fontWeight: 600, color: "#1e293b" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a5fb4" strokeWidth="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                {item}
+              </div>
+            ))}
+          </div>
         </div>
-        <div>
-          <h2 className="section-heading">Area of Usage</h2>
-          <ul className="plain-list">
-            <li>Home, Office, Shop, Showroom</li>
-            <li>Hotel, Restaurant, Club, Entertainment Area</li>
-            <li>Society, Village, Apartments &amp; Resident Area</li>
-            <li>Hospital, Clinic &amp; Pharmaceuticals Industries</li>
-            <li>Factory, Corporate and Industries</li>
-            <li>Universities, Collages, Schools &amp; Hostels</li>
-          </ul>
-        </div>
-      </div>
+      </section>
 
       <Testimonials />
     </div>

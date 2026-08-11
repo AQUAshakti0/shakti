@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <rect width="320" height="100" fill="#ffffff" rx="8"/>
+  <g transform="translate(15, 10)">
+    <!-- White card background -->
+    <rect x="0" y="0" width="290" height="80" fill="#ffffff" rx="4" stroke="#e2e8f0" stroke-width="1"/>
+    <!-- Interlocking double oval loop symbol -->
+    <g stroke="#1e293b" stroke-width="4" fill="none" transform="translate(130, 8)">
+      <ellipse cx="15" cy="14" rx="10" ry="12"/>
+      <ellipse cx="15" cy="24" rx="10" ry="12"/>
+    </g>
+    <!-- Text Softech Pharma -->
+    <text x="145" y="65" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="21" fill="#0f172a" letter-spacing="-0.5">Softech Pharma</text>
+  </g>
+</svg>

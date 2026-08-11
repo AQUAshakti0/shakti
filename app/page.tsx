@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HeroSlider from "./components/HeroSlider";
+import StatCounter from "./components/StatCounter";
+import Testimonials from "./components/Testimonials";
+import MissionAndUsage from "./components/MissionAndUsage";
+import ReputedClients from "./components/ReputedClients";
 
 export const metadata: Metadata = {
   title: "Industrial Water Treatment Plants, RO, STP, ETP & Chemicals",
@@ -54,14 +59,6 @@ const homeJsonLd = {
 };
 
 export default function Home() {
-  const clients = [
-    { name: "Blue Star", logo: "/clients/blue-star.png" },
-    { name: "Olive Healthcare", logo: "/clients/olive-healthcare.jpg" },
-    { name: "Softech Pharma", logo: "/clients/softech-pharma.jpg" },
-    { name: "Powerica", logo: "/clients/powerica.jpg" },
-    { name: "Nilkamal", logo: "/clients/nilkamal.webp" },
-  ];
-
   return (
     <>
       <script
@@ -69,59 +66,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
       <div className="page-content">
-        <section className="slider" aria-label="Featured water treatment solutions">
-          <div className="slider-track">
-            <div className="slide">
-              <img src="/ro-plant.png" alt="Industrial RO Plant manufactured by Aqua Shakti Industries, Vapi Gujarat" width={1100} height={340} loading="eager" />
-              <div className="slide-overlay">
-                <h1>Industrial Water Treatment Plant</h1>
-                <p>Manufacturer Supplier &amp; Service Provider of water treatment Plant &amp; Chemicals</p>
-              </div>
-            </div>
-            <div className="slide">
-              <img src="/water-plant.png" alt="STP and ETP Water Treatment Facility by Aqua Shakti" width={1100} height={340} loading="lazy" />
-              <div className="slide-overlay">
-                <h2>STP &amp; ETP Plants</h2>
-                <p>Ideal solution for all types of water - Design, Operation and Analysis</p>
-              </div>
-            </div>
-            <div className="slide">
-              <img src="/boiler-system.png" alt="Boiler Water Treatment System and Chemicals" width={1100} height={340} loading="lazy" />
-              <div className="slide-overlay">
-                <h2>Water Treatment Chemicals</h2>
-                <p>All types of chemicals for boiler, RO, and waste water treatment</p>
-              </div>
-            </div>
-          </div>
-          <div className="slider-dots" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </section>
-
-        <section className="stat-row" aria-label="Company statistics">
-          <div className="stat-item">
-            <strong>500+</strong>
-            <span>Customers in Gujarat</span>
-          </div>
-          <div className="stat-item">
-            <strong>Since 2007</strong>
-            <span>Established Excellence</span>
-          </div>
-          <div className="stat-item">
-            <strong>ISO 9001:2015</strong>
-            <span>Certified Company</span>
-          </div>
-          <div className="stat-item">
-            <strong>20+</strong>
-            <span>Reputed Clients</span>
-          </div>
-        </section>
+        <HeroSlider />
 
         <section className="row" aria-label="Company expertise">
           <div className="row-text">
-            <h2 className="section-heading">Our Expertise</h2>
+            <h2 className="section-heading">Who We Are</h2>
             <p className="text-block">
               <strong>Aqua Shakti Industries</strong> is a leading manufacturer, supplier and service provider 
               of all kinds of Water Treatment Plants. Established in 2007 in Vapi, Gujarat, we have carved 
@@ -132,150 +81,136 @@ export default function Home() {
               requirements and high efficiency. We are committed to achieving excellence in all 
               departments of our business, ensuring maximum customer satisfaction.
             </p>
+            <Link href="/about" className="submit-btn" style={{ textDecoration: "none", display: "inline-block", marginTop: "12px", fontWeight: 400 }}>
+              View More
+            </Link>
           </div>
-          <div className="row-img">
-            <img src="/chemical-dosing.png" alt="Chemical Dosing System for Water Treatment" width={420} height={300} loading="lazy" />
+          <div className="row-img" style={{ flex: "0 0 350px" }}>
+            <video
+              src="/video/company profile.mp4"
+              width={350}
+              height={350}
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+              style={{
+                width: "350px",
+                height: "350px",
+                maxWidth: "100%",
+                objectFit: "cover",
+                borderRadius: "8px",
+                border: "1px solid #d6e4ed",
+                display: "block",
+              }}
+            />
           </div>
         </section>
+
+        <StatCounter />
 
         {/* ---- Products Overview ---- */}
         <section aria-label="Products and services">
           <h2 className="section-heading">Our Products &amp; Services</h2>
           <div className="services-grid">
             <article className="service-card">
-              <div className="service-icon">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <rect x="8" y="12" width="32" height="24" rx="2" stroke="#1a5fb4" strokeWidth="2"/>
-                  <line x1="8" y1="20" x2="40" y2="20" stroke="#1a5fb4" strokeWidth="1.5"/>
-                  <circle cx="24" cy="28" r="4" stroke="#1a5fb4" strokeWidth="1.5"/>
-                </svg>
+              <div className="service-card-body">
+                <div className="service-icon">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="8" y="12" width="32" height="24" rx="2" stroke="#1a1a1a" strokeWidth="2"/>
+                    <line x1="8" y1="20" x2="40" y2="20" stroke="#1a1a1a" strokeWidth="1.5"/>
+                    <circle cx="24" cy="28" r="4" stroke="#1a1a1a" strokeWidth="1.5"/>
+                  </svg>
+                </div>
+                <h3>Industrial RO Plants</h3>
+                <p>Custom-designed reverse osmosis systems for industrial water purification</p>
               </div>
-              <h3>Industrial RO Plants</h3>
-              <p>Custom-designed reverse osmosis systems for industrial water purification</p>
+              <Link href="/products?tab=ro" className="service-card-btn">
+                Explore More
+              </Link>
             </article>
+
             <article className="service-card">
-              <div className="service-icon">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M12 36 L24 8 L36 36" stroke="#1a5fb4" strokeWidth="2" fill="none"/>
-                  <line x1="16" y1="28" x2="32" y2="28" stroke="#1a5fb4" strokeWidth="1.5"/>
-                  <circle cx="24" cy="32" r="2" fill="#1a5fb4"/>
-                </svg>
+              <div className="service-card-body">
+                <div className="service-icon">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 36 L24 8 L36 36" stroke="#1a1a1a" strokeWidth="2" fill="none"/>
+                    <line x1="16" y1="28" x2="32" y2="28" stroke="#1a1a1a" strokeWidth="1.5"/>
+                    <circle cx="24" cy="32" r="2" fill="#1a1a1a"/>
+                  </svg>
+                </div>
+                <h3>STP &amp; ETP Plants</h3>
+                <p>Sewage and effluent treatment plants compliant with international standards</p>
               </div>
-              <h3>STP &amp; ETP Plants</h3>
-              <p>Sewage and effluent treatment plants compliant with international standards</p>
+              <Link href="/products?tab=wastewater" className="service-card-btn">
+                Explore More
+              </Link>
             </article>
+
+
+
             <article className="service-card">
-              <div className="service-icon">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <rect x="16" y="6" width="16" height="36" rx="2" stroke="#1a5fb4" strokeWidth="2"/>
-                  <circle cx="24" cy="18" r="4" stroke="#1a5fb4" strokeWidth="1.5"/>
-                  <rect x="20" y="30" width="8" height="4" rx="1" stroke="#1a5fb4" strokeWidth="1.5"/>
-                </svg>
+              <div className="service-card-body">
+                <div className="service-icon">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M20 8 C20 8 12 20 12 28 C12 34.627 17.373 40 24 40 C30.627 40 36 34.627 36 28 C36 20 28 8 28 8" stroke="#1a1a1a" strokeWidth="2"/>
+                    <circle cx="24" cy="28" r="4" stroke="#1a1a1a" strokeWidth="1.5"/>
+                  </svg>
+                </div>
+                <h3>Water Treatment Chemicals</h3>
+                <p>ASTreat range of chemicals for boiler, RO, and effluent treatment</p>
               </div>
-              <h3>Boiler Plants</h3>
-              <p>Energy-efficient boiler systems with advanced controls and multi-fuel options</p>
+              <Link href="/chemicals" className="service-card-btn">
+                Explore More
+              </Link>
             </article>
+
             <article className="service-card">
-              <div className="service-icon">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M20 8 C20 8 12 20 12 28 C12 34.627 17.373 40 24 40 C30.627 40 36 34.627 36 28 C36 20 28 8 28 8" stroke="#1a5fb4" strokeWidth="2"/>
-                  <circle cx="24" cy="28" r="4" stroke="#1a5fb4" strokeWidth="1.5"/>
-                </svg>
+              <div className="service-card-body">
+                <div className="service-icon">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="12" y="10" width="24" height="28" rx="3" stroke="#1a1a1a" strokeWidth="2"/>
+                    <circle cx="24" cy="22" r="5" stroke="#1a1a1a" strokeWidth="1.5"/>
+                    <circle cx="20" cy="34" r="1.5" fill="#1a1a1a"/>
+                    <circle cx="24" cy="34" r="1.5" fill="#1a1a1a"/>
+                    <circle cx="28" cy="34" r="1.5" fill="#1a1a1a"/>
+                  </svg>
+                </div>
+                <h3>Domestic RO Systems</h3>
+                <p>RO + UV + Alkaline and RO + UV + Mineral purifiers for home use</p>
               </div>
-              <h3>Water Treatment Chemicals</h3>
-              <p>ASTreat range of chemicals for boiler, RO, and effluent treatment</p>
+              <Link href="/products?tab=domestic" className="service-card-btn">
+                Explore More
+              </Link>
             </article>
+
             <article className="service-card">
-              <div className="service-icon">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <rect x="12" y="10" width="24" height="28" rx="3" stroke="#1a5fb4" strokeWidth="2"/>
-                  <circle cx="24" cy="22" r="5" stroke="#1a5fb4" strokeWidth="1.5"/>
-                  <circle cx="20" cy="34" r="1.5" fill="#1a5fb4"/>
-                  <circle cx="24" cy="34" r="1.5" fill="#1a5fb4"/>
-                  <circle cx="28" cy="34" r="1.5" fill="#1a5fb4"/>
-                </svg>
+              <div className="service-card-body">
+                <div className="service-icon">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="24" cy="24" r="14" stroke="#1a1a1a" strokeWidth="2"/>
+                    <path d="M24 14 L24 24 L32 28" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3>AMC &amp; Spare Parts</h3>
+                <p>Comprehensive annual maintenance contracts, spare parts, and on-site support</p>
               </div>
-              <h3>Domestic RO Systems</h3>
-              <p>RO + UV + Alkaline and RO + UV + Mineral purifiers for home use</p>
-            </article>
-            <article className="service-card">
-              <div className="service-icon">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="24" cy="24" r="14" stroke="#1a5fb4" strokeWidth="2"/>
-                  <path d="M24 14 L24 24 L32 28" stroke="#1a5fb4" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <h3>AMC &amp; Services</h3>
-              <p>Comprehensive annual maintenance contracts and on-site support</p>
+              <Link href="/products?tab=spares" className="service-card-btn">
+                Explore More
+              </Link>
             </article>
           </div>
         </section>
 
-        <section className="two-col" aria-label="Usage areas and mission">
-          <div>
-            <h2 className="section-heading">Area of Usage</h2>
-            <ul className="plain-list">
-              <li>Factory, Corporate and Industries</li>
-              <li>Hospital, Clinic &amp; Pharmaceuticals Industries</li>
-              <li>Hotel, Restaurant, Club, Entertainment Area</li>
-              <li>Society, Village, Apartments &amp; Resident Area</li>
-              <li>Universities, Collages, Schools &amp; Hostels</li>
-              <li>Home, Office, Shop, Showroom</li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="section-heading">Our Mission</h2>
-            <p className="text-block" style={{ fontSize: '14px' }}>
-              We work with clear and strategic market focus for providing customer centric solutions 
-              and services. Keeping pace with latest technological developments, we combine our own 
-              innovative thinking to build solutions and services for a strong competitive position.
-            </p>
-            <Link href="/about" className="submit-btn" style={{ textDecoration: 'none', display: 'inline-block', marginTop: '10px' }}>
-              Read More
-            </Link>
-          </div>
-        </section>
+        <MissionAndUsage showReadMore={true} />
+
+        {/* ---- Customer Reviews ---- */}
+        <Testimonials />
 
         {/* ---- Reputed Clients ---- */}
-        <section className="clients-section" aria-label="Our reputed clients">
-          <h2 className="section-heading">Our Reputed Clients</h2>
-          <p className="text-block">
-            We are proud to serve some of the most respected names across industries — 
-            from pharmaceuticals and hospitality to power generation and manufacturing.
-          </p>
-          <div className="clients-grid-contact">
-            {clients.map((client) => (
-              <div key={client.name} className="client-card-contact">
-                <div className="client-logo-wrap">
-                  <img
-                    src={client.logo}
-                    alt={`${client.name} - Trusted Client of Aqua Shakti Industries`}
-                    width={120}
-                    height={60}
-                    loading="lazy"
-                  />
-                </div>
-                <span className="client-name">{client.name}</span>
-              </div>
-            ))}
-          </div>
-        </section>
+        <ReputedClients />
 
-        {/* ---- CTA ---- */}
-        <section className="cta-strip" aria-label="Contact call to action">
-          <div>
-            <h2>Need a Water Treatment Solution?</h2>
-            <p>Get in touch for a free consultation and customized quote.</p>
-          </div>
-          <div className="cta-actions">
-            <Link href="/contact" className="submit-btn" style={{ textDecoration: 'none' }}>
-              Get a Quote
-            </Link>
-            <a href="tel:+916356008844" className="submit-btn cta-outline" style={{ textDecoration: 'none' }}>
-              Call: +91-6356008844
-            </a>
-          </div>
-        </section>
       </div>
     </>
   );

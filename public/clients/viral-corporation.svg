@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <rect width="320" height="100" fill="#ffffff" rx="8"/>
+  <g transform="translate(45, 10)">
+    <!-- INSTACABIN roof badge -->
+    <path d="M 60 4 L 110 4 L 140 22 L 30 22 Z" fill="#cf1e1e"/>
+    <rect x="42" y="24" width="12" height="18" fill="#0b2c7e"/>
+    <rect x="64" y="24" width="12" height="18" fill="#0b2c7e"/>
+    <rect x="86" y="24" width="12" height="18" fill="#0b2c7e"/>
+    <rect x="108" y="24" width="12" height="18" fill="#0b2c7e"/>
+    <rect x="130" y="24" width="12" height="18" fill="#0b2c7e"/>
+    <text x="85" y="16" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="9" fill="#ffffff" letter-spacing="1">INSTACABIN</text>
+    
+    <!-- Text VIRAL CORPORATION -->
+    <text x="85" y="56" text-anchor="middle" font-family="'Times New Roman', Georgia, serif" font-weight="900" font-size="20" fill="#0b2c7e" letter-spacing="1.5">VIRAL</text>
+    <text x="85" y="75" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="800" font-size="14" fill="#0b2c7e" letter-spacing="2">CORPORATION</text>
+  </g>
+</svg>

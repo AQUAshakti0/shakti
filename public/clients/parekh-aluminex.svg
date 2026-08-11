@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <rect width="320" height="100" fill="#ffffff" rx="8"/>
+  <g transform="translate(25, 12)">
+    <!-- Cyan PAL Emblem -->
+    <text x="135" y="44" text-anchor="middle" font-family="'Arial Black', 'Inter', sans-serif" font-weight="900" font-size="44" fill="#0080a8" letter-spacing="1">PAL</text>
+    <circle cx="137" cy="18" r="6" stroke="#0080a8" stroke-width="3" fill="none"/>
+    <!-- Text Parekh Aluminex Limited -->
+    <text x="135" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="800" font-size="16" fill="#1e293b" letter-spacing="0.5">Parekh Aluminex Limited</text>
+  </g>
+</svg>
