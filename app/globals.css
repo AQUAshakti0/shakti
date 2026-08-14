@@ -301,16 +301,44 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
-.topbar-brand span {
+/* ---- WATERCOLOR TEXT EFFECT ---- */
+@keyframes watercolorFlow {
+  0% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 1px 2px rgba(2, 132, 199, 0.25));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 1px 4px rgba(6, 182, 212, 0.45));
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 1px 2px rgba(16, 185, 129, 0.3));
+  }
+}
+
+.topbar-brand span,
+.watercolor-text {
   font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  color: #0b3c26;
+  font-weight: 800;
   font-size: 11px;
   display: block;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.6px;
   margin-top: 2px;
-  opacity: 0.85;
+  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 25%, #0d9488 50%, #10b981 75%, #1e40af 100%);
+  background-size: 220% 220%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: watercolorFlow 7s ease-in-out infinite alternate;
+  transition: all 0.3s ease;
+}
+
+.topbar-brand:hover span,
+.topbar-brand:hover .watercolor-text {
+  filter: drop-shadow(0 1px 6px rgba(6, 182, 212, 0.6));
 }
 
 /* ---- HAMBURGER MENU ---- */
@@ -697,7 +725,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
-/* ---- FADE CROSS-DISSOLVE HERO SLIDER (SquareWorld Style) ---- */
+/* ---- HERO SECTION BACKGROUND (SWOOPING NAVY BLUE WAVE DESIGN) ---- */
 .fade-hero-slider {
   position: relative;
   width: 100vw;
@@ -705,9 +733,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: calc(-50vw + 50%);
   height: 420px;
   overflow: hidden;
-  margin-bottom: 50px;
-  border-bottom: 1px solid #d6e4ed;
-  background-color: #0a2540;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #cbd5e1;
+  background-color: #e9ecef;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 420' preserveAspectRatio='none'%3E%3Cpath fill='%231b3b6b' d='M0,0 L960,0 C900,90 790,170 760,250 C730,330 710,385 640,420 L0,420 Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .fade-slide {
@@ -728,25 +760,6 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
 }
 
-.fade-slide-bg {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.fade-slide-bg img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
-  transform: scale(1);
-  transition: transform 6s cubic-bezier(0.1, 1, 0.1, 1);
-}
-
-.fade-slide.active .fade-slide-bg img {
-  transform: scale(1.06);
-}
-
 .fade-slide-overlay {
   position: absolute;
   top: 0;
@@ -756,7 +769,6 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   padding: 0 40px;
-  background: linear-gradient(90deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.45) 45%, transparent 100%);
   color: #ffffff;
 }
 
@@ -764,10 +776,10 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 1360px;
   width: 100%;
   margin: 0 auto;
-  padding-right: 40%;
+  padding-right: 45%;
   transform: translateY(18px);
   opacity: 0;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, opacity 0.8s ease 0.3s;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, opacity 0.8s ease 0.2s;
 }
 
 .fade-slide.active .slide-overlay-content {
@@ -775,49 +787,115 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
+.hero-slide-badge {
+  display: inline-block;
+  color: #93c5fd;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
 .fade-slide h2 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 34px;
-  line-height: 1.2;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  margin-bottom: 10px;
-  color: #fbf9f4;
+  font-family: 'Inter', sans-serif;
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 14px;
+  color: #ffffff;
 }
 
 .fade-slide p {
-  font-size: 14px;
-  color: #f4f0e6;
-  line-height: 1.55;
-  margin-bottom: 20px;
+  font-size: 15px;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 24px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  max-width: 520px;
+  max-width: 580px;
+}
+
+.hero-btn-group {
+  display: flex;
+  gap: 14px;
+  align-items: center;
 }
 
 .slide-cta-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 28px;
-  background: #f59e0b;
-  border: 1.5px solid #f59e0b;
-  color: #0b3c26;
+  justify-content: center;
+  padding: 12px 32px;
+  background: #f26522;
+  border: 1px solid #f26522;
+  color: #ffffff;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 14.5px;
+  font-weight: 700;
   text-decoration: none;
   border-radius: 6px;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 4px 14px rgba(242, 101, 34, 0.35);
 }
 
 .slide-cta-btn:hover {
-  background-color: #ffffff;
-  border-color: #ffffff;
-  color: #0b3c26;
+  background-color: #ea580c;
+  border-color: #ea580c;
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 18px rgba(242, 101, 34, 0.45);
+}
+
+.slide-sec-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  background: #172a45;
+  border: 1px solid #243b5a;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.slide-sec-btn:hover {
+  background: #1e3a60;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.hero-slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.hero-dot {
+  width: 24px;
+  height: 6px;
+  border-radius: 3px;
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.hero-dot.active {
+  background: #f26522;
+  width: 32px;
+  opacity: 1;
 }
 
 /* ---- PAGE CONTENT ---- */

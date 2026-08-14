@@ -68,7 +68,7 @@ export default function Navbar() {
           />
           <div className="topbar-brand">
             AQUASHAKTI
-            <span>INDUSTRIES PRIVATE LIMITED</span>
+            <span className="watercolor-text">INDUSTRIES PRIVATE LIMITED</span>
           </div>
         </Link>
 

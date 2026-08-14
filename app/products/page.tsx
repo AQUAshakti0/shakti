@@ -4,6 +4,8 @@ import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
+import { domesticProductsData } from "./domesticProductsData";
+
 export interface ProductDetail {
   id: string;
   name: string;
@@ -19,9 +21,11 @@ export interface ProductDetail {
   fullDesc: string;
   features: string[];
   specs: { label: string; value: string }[];
+  price?: string;
+  moq?: string;
 }
 
-export const productsData: ProductDetail[] = [
+const industrialProductsData: ProductDetail[] = [
   {
     id: "industrial-ro-plant",
     name: "Industrial RO Plant",
@@ -130,25 +134,120 @@ export const productsData: ProductDetail[] = [
     ]
   },
   {
-    id: "domestic-commercial-ro",
-    name: "Domestic & Commercial RO Purifier",
+    id: "ro-plant-25lph",
+    name: "25 LPH Commercial RO Plant",
     category: "domestic",
-    categoryLabel: "Drinking Water",
-    badge: "RO + UV + UF + Alkaline",
-    image: "/descaling-treatment.png",
-    capacity: "25 LPH – 250 LPH",
-    recoveryRate: "As per plant Design",
-    automation: "Fully Automatic Dispensers",
-    applications: "Offices, Showrooms, Homes, Restaurants",
-    shortDesc: "Sleek, silent RO+UV drinking water purifiers and chilled water dispensers equipped with copper charge & mineral controllers.",
-    fullDesc: "Provides 100% pure, alkaline drinking water for corporate workplaces, showrooms, hostels, and modern homes. Removes heavy metals, pesticides, bacteria, and TDS while retaining essential healthy minerals.",
-    features: ["Alkaline Mineral Booster", "Hot & Cold Dispensing Option", "Stainless Steel Storage Tank", "TDS Adjuster & UV Fail Alarm"],
+    categoryLabel: "Commercial RO",
+    badge: "25 LPH Capacity",
+    image: "/products/industrial/ro-plant-25lph.png",
+    capacity: "25 LPH",
+    recoveryRate: "Up to 50%",
+    automation: "Semi-Automatic / Auto Cutoff",
+    applications: "Offices, Restaurants, Small Clinics, Schools",
+    shortDesc: "Compact 25 LPH commercial reverse osmosis plant skid with 3 vertical big blue filter canisters, heavy duty booster pump & high-rejection TFC RO membranes.",
+    fullDesc: "Aqua Shakti 25 LPH Commercial RO Plant provides clean, pure drinking water for small offices, restaurants, and educational institutes. Built on a rigid skid with 3 Big Blue filter housings and heavy-duty diaphragm booster pump.",
+    features: ["3 Big Blue Canister Skid", "25 LPH Pure Water Output", "Built-in Diaphragm Booster Pump", "Low Power Consumption"],
     specs: [
-      { label: "Purification Stage", value: "7-Stage RO + UV + UF + Alkaline" },
-      { label: "Dispenser Type", value: "Hot, Normal & Cold Water Options" },
-      { label: "Storage Capacity", value: "10L – 80L Stainless Steel Tank" }
+      { label: "Flow Rate Capacity", value: "25 Liters / Hour" },
+      { label: "Purification Method", value: "RO + UV + Sediment Pre-Filter" },
+      { label: "Operating Voltage", value: "230V AC / 24V DC" },
+      { label: "Skid Material", value: "Powder Coated Metal Skid Frame" },
+      { label: "Membrane Type", value: "High Rejection 75/80 GPD TFC Membrane" }
+    ]
+  },
+  {
+    id: "ro-plant-50lph",
+    name: "50 LPH Commercial RO Plant",
+    category: "domestic",
+    categoryLabel: "Commercial RO",
+    badge: "50 LPH Capacity",
+    image: "/products/industrial/ro-plant-50lph.png",
+    capacity: "50 LPH",
+    recoveryRate: "Up to 55%",
+    automation: "Fully Automatic Auto Cutoff",
+    applications: "Hotels, Corporate Offices, Mess, Colleges",
+    shortDesc: "High-output 50 LPH commercial RO water purifier equipped with dual booster pumps, 20-inch jumbo filter housings & digital TDS controller.",
+    fullDesc: "The 50 LPH Commercial RO Plant delivers continuous pure water flow for medium establishments like corporate cafeterias, hostels, and hotels. Features dual booster pumps and auto-flush controller.",
+    features: ["Dual Heavy-Duty Booster Pumps", "50 LPH High Flow Rate", "Jumbo Micron Pre-filters", "Auto Flush & TDS Controller"],
+    specs: [
+      { label: "Flow Rate Capacity", value: "50 Liters / Hour" },
+      { label: "Purification Method", value: "RO + UV + Anti-Scalant Dosing" },
+      { label: "Pump Type", value: "Dual Diaphragm Booster Pumps" },
+      { label: "Storage Tank", value: "Compatible with SS / Plastic Storage Tank" },
+      { label: "Membrane Type", value: "100 GPD / 150 GPD TFC Membranes" }
+    ]
+  },
+  {
+    id: "ro-plant-500lph",
+    name: "500 LPH Industrial RO Plant",
+    category: "ro",
+    categoryLabel: "Industrial RO",
+    badge: "500 LPH Capacity",
+    image: "/products/industrial/ro-plant-500lph.png",
+    capacity: "500 LPH",
+    recoveryRate: "Up to 70%",
+    automation: "PLC / Microprocessor Panel",
+    applications: "Factories, Bottling Plants, Hospitals, Textiles",
+    shortDesc: "Custom-engineered 500 LPH industrial reverse osmosis plant featuring dual FRP pretreatment vessels, CRI vertical high-pressure pump, and stainless steel control panel.",
+    fullDesc: "Aqua Shakti 500 LPH Industrial RO Plant removes up to 99.2% of dissolved solids from groundwater and municipal water. Built with heavy-duty FRP pretreatment vessels, CRI multi-stage vertical high pressure pump, and SS control panel with online flow rotameters.",
+    features: ["2 x FRP Pretreatment Vessels", "CRI Vertical High-Pressure Pump", "SS Control Panel with Rotameters", "99% Salt Desalination"],
+    specs: [
+      { label: "Flow Rate Capacity", value: "500 Liters / Hour" },
+      { label: "Membrane Vessel", value: "FRP / SS 4040 x 2" },
+      { label: "High Pressure Pump", value: "CRI / CNP Vertical Multistage Pump" },
+      { label: "Pretreatment Vessels", value: "1054 / 1252 FRP Vessels with Multiport Valves" },
+      { label: "Control System", value: "Microprocessor Panel with Auto Flush" }
+    ]
+  },
+  {
+    id: "ro-plant-1000lph",
+    name: "1000 LPH Industrial RO Plant",
+    category: "ro",
+    categoryLabel: "Industrial RO",
+    badge: "1000 LPH Capacity",
+    image: "/products/industrial/ro-plant-1000lph.png",
+    capacity: "1000 LPH (1 M³/Hr)",
+    recoveryRate: "Up to 75%",
+    automation: "Fully Automatic PLC with HMI",
+    applications: "Pharmaceuticals, Chemical Plants, Heavy Manufacturing",
+    shortDesc: "Heavy-duty 1000 LPH industrial RO water treatment system equipped with 4040/8040 horizontal membrane vessels, automated chemical dosing unit & online conductivity meter.",
+    fullDesc: "The 1000 LPH Industrial RO Plant is engineered for continuous 24/7 industrial process water supply. Features heavy-duty horizontal SS membrane rack, automatic antiscalant dosing, and digital monitoring.",
+    features: ["1000 LPH Continuous Output", "4040 / 8040 Membrane Rack", "Online TDS & Conductivity Monitor", "Chemical Dosing System"],
+    specs: [
+      { label: "Flow Rate Capacity", value: "1000 LPH (1 M³/Hr)" },
+      { label: "Desalination Rate", value: "99.2% Salt Removal" },
+      { label: "Pretreatment", value: "Sand & Carbon Media Filters (1354 FRP)" },
+      { label: "High Pressure Pump", value: "SS 304 Vertical Multistage Pump" },
+      { label: "Dosing Unit", value: "Automatic Antiscalant Metering Pump" }
+    ]
+  },
+  {
+    id: "industrial-uv-system",
+    name: "Industrial SS UV Disinfection System",
+    category: "ro",
+    categoryLabel: "UV Disinfection",
+    badge: "99.99% Pathogen Inactivation",
+    image: "/products/industrial/industrial-uv-system.png",
+    capacity: "500 LPH – 10,000 LPH",
+    recoveryRate: "100% Water Flow",
+    automation: "Automatic Lamp Failure Alarm",
+    applications: "Pharma Process Water, Food & Beverage, RO Permeate",
+    shortDesc: "High-intensity SS 316 stainless steel industrial UV sterilizer chamber with high-transmittance quartz sleeves & microprocessor control unit for 99.99% pathogen inactivation.",
+    fullDesc: "Aqua Shakti Industrial UV Systems destroy 99.99% of bacteria, viruses, and microorganisms in water without chemicals. Built with electro-polished SS 316 chamber and high-output quartz lamps.",
+    features: ["Food Grade SS 316 Chamber", "99.99% Bacterial & Viral Kill", "High Transmittance Quartz Sleeve", "Digital Run-Hour Meter"],
+    specs: [
+      { label: "MOC Chamber", value: "Stainless Steel SS 316 / SS 304" },
+      { label: "Disinfection Efficiency", value: "99.99% E. coli & Microorganisms" },
+      { label: "Lamp Type", value: "High-Output Quartz UV-C Germicidal Lamp" },
+      { label: "Max Working Pressure", value: "10 Bar" },
+      { label: "Electrical Panel", value: "Digital Control Box with UV Intensity Sensor" }
     ]
   }
+];
+
+export const productsData: ProductDetail[] = [
+  ...industrialProductsData,
+  ...domesticProductsData
 ];
 
 export const sparePartsData = [
@@ -266,15 +365,25 @@ function ProductsContent() {
               className="product-card-hover"
             >
               {/* Product Image Box */}
-              <div style={{ position: "relative", height: "220px", width: "100%", background: "#f8fafc", overflow: "hidden" }}>
+              <div style={{ position: "relative", height: "230px", width: "100%", background: "#f8fafc", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <img
                   src={product.image}
                   alt={product.name}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: product.category === "domestic" ? "contain" : "cover",
+                    padding: product.category === "domestic" ? "12px" : "0"
+                  }}
                 />
                 <span style={{ position: "absolute", bottom: "12px", left: "12px", background: "rgba(255, 255, 255, 0.95)", backdropFilter: "blur(4px)", color: "#0284c7", fontSize: "11px", fontWeight: 800, padding: "3px 10px", borderRadius: "12px", textTransform: "uppercase" }}>
                   {product.categoryLabel}
                 </span>
+                {product.moq && (
+                  <span style={{ position: "absolute", top: "12px", right: "12px", background: "rgba(15, 23, 42, 0.82)", backdropFilter: "blur(4px)", color: "#f8fafc", fontSize: "10.5px", fontWeight: 700, padding: "3px 10px", borderRadius: "12px" }}>
+                    MOQ: {product.moq}
+                  </span>
+                )}
               </div>
 
               {/* Card Body */}

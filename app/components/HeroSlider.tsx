@@ -5,8 +5,7 @@ import Link from "next/link";
 
 interface SlideData {
   id: number;
-  image: string;
-  alt: string;
+  tag: string;
   title: string;
   subtitle: React.ReactNode;
   ctaText: string;
@@ -16,41 +15,64 @@ interface SlideData {
 const slides: SlideData[] = [
   {
     id: 1,
-    image: "/ro-plant.png",
-    alt: "Industrial RO Plant manufactured by Aqua Shakti Industries, Vapi Gujarat",
-    title: "Industrial Water Treatment Plant",
+    tag: "15 YEARS OF EXPERIENCE WE PROVIDE SERVICES",
+    title: "Industry A Variety Of High Quality Products",
     subtitle: (
       <>
-        Manufacturer Supplier &amp; Service Provider of high-capacity RO,<br />
-        STP &amp; ETP water treatment plants across Gujarat.
+        Aqua Shakti is an Industry &amp; Manufacturing Services Provider Institution.<br />
+        Suitable for Factory, Manufacturing, Engineering &amp; Construction Fields.
       </>
     ),
-    ctaText: "View Products",
-    ctaHref: "/products",
-  },
-  {
-    id: 2,
-    image: "/water-plant.png",
-    alt: "STP and ETP Water Treatment Facility by Aqua Shakti",
-    title: "STP &amp; ETP Turnkey Solutions",
-    subtitle: (
-      <>
-        Complete design, operation, and chemical analysis for<br />
-        all types of industrial effluent and sewage water.
-      </>
-    ),
-    ctaText: "Contact Experts",
+    ctaText: "Let's Start",
     ctaHref: "/contact",
   },
   {
-    id: 3,
-    image: "/boiler-system.png",
-    alt: "Boiler Water Treatment System and Chemicals",
-    title: "Water Treatment Chemicals",
+    id: 2,
+    tag: "CPCB & GPCB COMPLIANT RECYCLING SOLUTIONS",
+    title: "Wastewater Treatment & ZLD Plants",
     subtitle: (
       <>
-        High-grade specialty chemicals for boiler, RO membrane<br />
-        antiscalants, and waste water purification.
+        Turnkey Sewage &amp; Effluent Recycling Treatment Systems<br />
+        with Zero Liquid Discharge technology for 100% water recovery.
+      </>
+    ),
+    ctaText: "Explore STP & ETP",
+    ctaHref: "/products?tab=wastewater",
+  },
+  {
+    id: 3,
+    tag: "HARDNESS & DEMINERALIZATION PLANTS",
+    title: "Industrial Softeners & DM Plants",
+    subtitle: (
+      <>
+        High-capacity ion-exchange water softeners &amp; Mixbed plants<br />
+        preventing boiler limescale &amp; outputting ultra-pure deionized water.
+      </>
+    ),
+    ctaText: "Explore Softeners",
+    ctaHref: "/products?tab=softener",
+  },
+  {
+    id: 4,
+    tag: "COMMERCIAL & DOMESTIC DRINKING WATER",
+    title: "Commercial & Domestic RO Systems",
+    subtitle: (
+      <>
+        Alkaline RO+UV purifiers &amp; chilled water dispensers<br />
+        engineered for corporate offices, hostels, restaurants &amp; modern homes.
+      </>
+    ),
+    ctaText: "Explore Commercial",
+    ctaHref: "/products?tab=domestic",
+  },
+  {
+    id: 5,
+    tag: "ASTREAT SPECIALTY FORMULATIONS",
+    title: "Specialty Water Treatment Chemicals",
+    subtitle: (
+      <>
+        High-performance antiscalants, boiler chemicals, descaling formulations<br />
+        &amp; cooling tower biocides manufactured in Vapi, Gujarat.
       </>
     ),
     ctaText: "View Chemicals",
@@ -79,27 +101,36 @@ export default function HeroSlider() {
             className={`fade-slide ${isActive ? "active" : ""}`}
             aria-hidden={!isActive}
           >
-            <div className="fade-slide-bg">
-              <img
-                src={slide.image}
-                alt={slide.alt}
-                width={1920}
-                height={420}
-                loading={index === 0 ? "eager" : "lazy"}
-              />
-            </div>
             <div className="fade-slide-overlay">
               <div className="slide-overlay-content">
+                <span className="hero-slide-badge">{slide.tag}</span>
                 <h2>{slide.title}</h2>
                 <p>{slide.subtitle}</p>
-                <Link href={slide.ctaHref} className="slide-cta-btn">
-                  {slide.ctaText} <span>&rarr;</span>
-                </Link>
+                <div className="hero-btn-group">
+                  <Link href={slide.ctaHref} className="slide-cta-btn">
+                    {slide.ctaText}
+                  </Link>
+                  <Link href="/products" className="slide-sec-btn">
+                    Our Products
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         );
       })}
+
+      {/* Slide Navigation Indicator Pills */}
+      <div className="hero-slider-dots">
+        {slides.map((s, idx) => (
+          <button
+            key={s.id}
+            className={`hero-dot ${idx === currentSlide ? "active" : ""}`}
+            onClick={() => setCurrentSlide(idx)}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
     </section>
   );
 }
