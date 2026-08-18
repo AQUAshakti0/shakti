@@ -42,6 +42,8 @@ const slides: SlideData[] = [
     ),
     ctaText: "Explore STP & ETP",
     ctaHref: "/products?tab=wastewater",
+    image: "/hero/hero_plant_2.png",
+    imageAlt: "Aqua Shakti Wastewater & Industrial RO Plant",
   },
   {
     id: 3,
