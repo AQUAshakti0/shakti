@@ -10,8 +10,8 @@ interface SlideData {
   subtitle: React.ReactNode;
   ctaText: string;
   ctaHref: string;
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 const slides: SlideData[] = [
@@ -42,8 +42,6 @@ const slides: SlideData[] = [
     ),
     ctaText: "Explore STP & ETP",
     ctaHref: "/products?tab=wastewater",
-    image: "/hero/hero_stp_etp.png",
-    imageAlt: "Wastewater STP and ETP Recycling Plant",
   },
   {
     id: 3,
@@ -57,8 +55,6 @@ const slides: SlideData[] = [
     ),
     ctaText: "Explore Softeners",
     ctaHref: "/products?tab=softener",
-    image: "/hero/hero_softener_dm.png",
-    imageAlt: "Industrial Water Softener & DM Plant",
   },
   {
     id: 4,
@@ -72,8 +68,6 @@ const slides: SlideData[] = [
     ),
     ctaText: "Explore Commercial",
     ctaHref: "/products?tab=domestic",
-    image: "/hero/hero_commercial_ro.png",
-    imageAlt: "Commercial and Domestic RO Water Purifiers",
   },
   {
     id: 5,
@@ -87,8 +81,6 @@ const slides: SlideData[] = [
     ),
     ctaText: "View Chemicals",
     ctaHref: "/chemicals",
-    image: "/hero/hero_chemicals.png",
-    imageAlt: "ASTreat Specialty Water Treatment Chemicals",
   },
 ];
 
@@ -110,11 +102,11 @@ export default function HeroSlider() {
         return (
           <div
             key={slide.id}
-            className={`fade-slide ${isActive ? "active" : ""}`}
+            className={`fade-slide ${isActive ? "active" : ""} ${!slide.image ? "has-no-image" : ""}`}
             aria-hidden={!isActive}
           >
             <div className="fade-slide-overlay">
-              <div className="slide-content-container">
+              <div className={`slide-content-container ${!slide.image ? "no-media" : ""}`}>
                 <div className="slide-overlay-content">
                   <span className="hero-slide-badge">{slide.tag}</span>
                   <h2>{slide.title}</h2>
@@ -129,13 +121,15 @@ export default function HeroSlider() {
                   </div>
                 </div>
 
-                <div className="slide-overlay-media">
-                  <img
-                    src={slide.image}
-                    alt={slide.imageAlt}
-                    className="hero-plant-img"
-                  />
-                </div>
+                {slide.image && (
+                  <div className="slide-overlay-media">
+                    <img
+                      src={slide.image}
+                      alt={slide.imageAlt || slide.title}
+                      className="hero-plant-img"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
