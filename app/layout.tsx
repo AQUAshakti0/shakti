@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
 import BackToTop from "./components/BackToTop";
+import ScrollReveal from "./components/ScrollReveal";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -178,6 +179,9 @@ export default function RootLayout({
 
         {/* Back to Top Floating Button */}
         <BackToTop />
+
+        {/* Global Scroll Reveal Animation Observer */}
+        <ScrollReveal />
       </body>
     </html>
   );

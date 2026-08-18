@@ -4047,6 +4047,50 @@ video::-webkit-media-controls-enclosure {
   overflow: hidden;
 }
 
+/* ---- SCROLL REVEAL ANIMATIONS (FLUID ON-SCROLL REVEAL SYSTEM) ---- */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: 
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-init.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Maintain hover transforms cleanly once revealed */
+.custom-service-card.reveal-init.is-revealed:hover {
+  transform: translateY(-5px);
+}
+
+.stat-item-card.reveal-init.is-revealed:hover {
+  transform: translateY(-2px);
+}
+
+.client-logo-card.reveal-init.is-revealed:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.product-card-hover.reveal-init.is-revealed:hover {
+  transform: translateY(-4px);
+}
+
+.blog-card.reveal-init.is-revealed:hover {
+  transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 
 
 
