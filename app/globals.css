@@ -945,8 +945,8 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    height: 580px;
-    min-height: 580px;
+    height: 620px;
+    min-height: 620px;
     background-image: none;
     background: linear-gradient(180deg, #102342 0%, #1b3b6b 50%, #17355f 100%);
     border-radius: 12px;
@@ -979,7 +979,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 6px;
   }
   .fade-slide h2 {
-    font-size: 24px;
+    font-size: 23px;
     line-height: 1.25;
     margin-bottom: 8px;
   }
@@ -1001,19 +1001,20 @@ h1, h2, h3, h4, h5, h6 {
   }
   .slide-overlay-media {
     flex: 0 0 auto;
-    max-height: 170px;
+    max-height: 240px;
     padding: 0;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     transform: none;
   }
   .hero-plant-img {
-    max-height: 160px;
+    max-height: 220px;
     width: auto;
-    max-width: 90%;
+    max-width: 95%;
     transform: none;
+    filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.4));
   }
   .hero-plant-img-4 {
-    max-height: 140px;
+    max-height: 190px;
   }
   .hero-slider-dots {
     bottom: 12px;
@@ -1022,8 +1023,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 480px) {
   .fade-hero-slider {
-    height: 560px;
-    min-height: 560px;
+    height: 590px;
+    min-height: 590px;
     border-radius: 8px;
   }
   .fade-slide h2 {
@@ -1035,13 +1036,15 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 14px;
   }
   .slide-overlay-media {
-    max-height: 150px;
+    max-height: 220px;
+    margin-bottom: 8px;
   }
   .hero-plant-img {
-    max-height: 140px;
+    max-height: 205px;
+    max-width: 96%;
   }
   .hero-plant-img-4 {
-    max-height: 125px;
+    max-height: 175px;
   }
   .slide-cta-btn,
   .slide-sec-btn {
