@@ -87,6 +87,8 @@ const slides: SlideData[] = [
     ),
     ctaText: "View Chemicals",
     ctaHref: "/chemicals",
+    image: "/hero/hero_plant_5.png",
+    imageAlt: "Aqua Shakti High Capacity Industrial RO & Membrane Plant",
   },
 ];
 
