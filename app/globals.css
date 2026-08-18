@@ -3597,6 +3597,7 @@ tr:last-child td {
 }
 
 /* ---- CUSTOMER REVIEWS 4-CARD VARIANT STYLES ---- */
+/* ---- CUSTOMER REVIEWS (CLEAN STICKY NOTE DESIGN - NO HOVER ANIMATION, NO COLOR OVERLAYS) ---- */
 .reviews-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -3616,208 +3617,115 @@ tr:last-child td {
   }
 }
 
-.review-card {
-  border-radius: 18px;
-  padding: 24px 22px;
+.sticky-review-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px 20px 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 280px;
+  min-height: 270px;
   position: relative;
-  overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
-.review-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
-}
-
-/* Variant 1: Light Water Blue Card */
-.card-pastel {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  border: 1px solid #bae6fd;
-  box-shadow: 0 4px 16px rgba(14, 165, 233, 0.05);
-}
-
-/* Variant 2: Medium Water Blue Card */
-.card-white {
-  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-  border: 1px solid #7dd3fc;
-  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.1);
-}
-
-/* Variant 3: User-Requested Water Color Ocean Aqua Card with Unique Liquid Texture */
-.card-watercolor {
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #0f766e 100%);
-  box-shadow: 0 10px 28px rgba(2, 132, 199, 0.3);
-}
-
-.water-texture-overlay {
+/* Translucent Tape Strip on Top */
+.sticky-tape {
   position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.22) 0%, transparent 45%),
-                    radial-gradient(circle at 85% 75%, rgba(56, 189, 248, 0.3) 0%, transparent 40%),
-                    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 1;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+  height: 18px;
+  background: rgba(203, 213, 225, 0.55);
+  backdrop-filter: blur(2px);
+  border: 1px dashed rgba(148, 163, 184, 0.4);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-/* Variant 3: Dark Water Blue Card */
-.card-magenta {
-  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
-  box-shadow: 0 10px 28px rgba(14, 165, 233, 0.25);
-  border: none;
-}
-
-/* Card Elements */
-.card-top-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
-}
-
-.avatar-wrapper {
-  position: relative;
-  flex-shrink: 0;
-}
-
-.avatar-img {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ffffff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.avatar-img-sm {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  flex-shrink: 0;
-}
-
-.quote-bubble-badge {
-  background: #db2777;
-  color: #ffffff;
-  width: 28px;
-  height: 28px;
-  border-radius: 50% 50% 50% 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 900;
-  box-shadow: 0 4px 10px rgba(219, 39, 119, 0.3);
-}
-
-.avatar-wrapper .quote-bubble-badge {
-  position: absolute;
-  bottom: -2px;
-  right: -6px;
-  width: 22px;
-  height: 22px;
-  font-size: 11px;
-}
-
-.white-badge {
-  background: #ffffff !important;
-  color: #db2777 !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
-}
-
-.card-top-badge-row {
+.sticky-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
-.rating-pill-badge {
-  background: #f59e0b;
-  color: #0b3c26;
-  font-size: 12px;
-  font-weight: 800;
-  padding: 4px 12px;
-  border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
-}
-
-.reviewer-name {
-  font-size: 15px;
-  font-weight: 700;
-  color: #1a202c;
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-}
-
-.reviewer-company {
-  font-size: 12px;
-  color: #718096;
-  display: block;
-}
-
-.reviewer-name-sm {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a202c;
-  margin: 0;
-}
-
-.reviewer-company-sm {
-  font-size: 12px;
-  color: #718096;
-  display: block;
-}
-
-.star-rating-row {
+.sticky-stars {
   color: #f59e0b;
-  font-size: 13px;
-  letter-spacing: 1px;
-  margin-top: 2px;
+  font-size: 14px;
+  letter-spacing: 2px;
 }
 
-.card-body-content {
-  margin: 12px 0 16px 0;
+.sticky-quote-icon {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  line-height: 1;
+  color: #cbd5e1;
+}
+
+.sticky-card-body {
   flex-grow: 1;
+  margin-bottom: 14px;
 }
 
-.card-headline {
-  font-size: 16px;
-  font-weight: 700;
-  color: #1a202c;
-  margin: 0 0 8px 0;
-  line-height: 1.35;
+.sticky-headline {
   font-family: 'Inter', sans-serif;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  line-height: 1.35;
 }
 
-.card-review-text {
-  font-size: 13.5px;
-  color: #4a5568;
+.sticky-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #475569;
   line-height: 1.55;
   margin: 0;
 }
 
-.card-bottom-row {
+.sticky-card-bottom {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 12px;
+  gap: 10px;
   padding-top: 12px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid #f1f5f9;
 }
 
-.light-text {
-  color: #ffffff !important;
+.sticky-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.light-text-muted {
-  color: #e0f2fe !important;
+.sticky-author {
+  min-width: 0;
+}
+
+.sticky-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sticky-company {
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  color: #64748b;
+  display: block;
+  margin-top: 2px;
 }
 
 /* Hide video fullscreen control button */
