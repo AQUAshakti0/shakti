@@ -731,13 +731,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  min-height: 440px;
-  height: 450px;
+  min-height: 480px;
+  height: 490px;
   overflow: hidden;
   margin-bottom: 40px;
   border-bottom: 1px solid #cbd5e1;
   background-color: #f1f5f9;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 450' preserveAspectRatio='none'%3E%3Cpath fill='%231b3b6b' d='M0,0 L1080,0 C1000,90 940,180 910,270 C880,360 840,415 780,450 L0,450 Z'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 490' preserveAspectRatio='none'%3E%3Cpath fill='%231b3b6b' d='M0,0 L1080,0 C1000,100 940,200 910,290 C880,390 840,450 780,490 L0,490 Z'%3E%3C/path%3E%3C/svg%3E");
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -785,8 +785,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fade-slide .slide-overlay-content {
-  flex: 0 0 63%;
-  max-width: 63%;
+  flex: 0 0 60%;
+  max-width: 60%;
   transform: translateY(18px);
   opacity: 0;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, opacity 0.8s ease 0.2s;
@@ -800,35 +800,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slide-content-container.no-media .slide-overlay-content {
-  flex: 0 0 63%;
-  max-width: 63%;
+  flex: 0 0 62%;
+  max-width: 62%;
 }
 
 .slide-overlay-media {
-  flex: 0 0 35%;
-  max-width: 35%;
+  flex: 0 0 38%;
+  max-width: 38%;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   position: relative;
   z-index: 2;
-  padding: 10px 0 20px 0;
+  padding: 5px 0 10px 0;
 }
 
 .hero-plant-img {
-  max-height: 380px;
+  max-height: 440px;
   width: auto;
-  max-width: 100%;
+  max-width: 110%;
   object-fit: contain;
-  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.28));
-  transform: translateY(14px) scale(0.96);
+  filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.32));
+  transform: translateY(14px) scale(1.02);
   opacity: 0;
   transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, opacity 0.8s ease 0.15s;
 }
 
 .fade-slide.active .hero-plant-img {
-  transform: translateY(0) scale(1);
+  transform: translateY(0) scale(1.08);
   opacity: 1;
 }
 
