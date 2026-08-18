@@ -348,7 +348,7 @@ function ProductsContent() {
 
       {/* Main Products Grid (When Not Spares Tab) */}
       {activeTab !== "spares" && (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "24px", marginBottom: "50px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "24px", marginBottom: "50px" }}>
           {filteredProducts.map((product) => (
             <div
               key={product.id}

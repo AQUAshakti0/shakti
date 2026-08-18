@@ -85,7 +85,7 @@ export default function Home() {
               View More
             </Link>
           </div>
-          <div className="row-img" style={{ flex: "0 0 350px" }}>
+          <div className="row-img company-video-wrapper">
             <video
               src="/video/company profile.mp4"
               width={350}
@@ -97,15 +97,7 @@ export default function Home() {
               controls
               controlsList="nofullscreen nodownload noremoteplayback"
               disablePictureInPicture
-              style={{
-                width: "350px",
-                height: "350px",
-                maxWidth: "100%",
-                objectFit: "cover",
-                borderRadius: "8px",
-                border: "1px solid #d6e4ed",
-                display: "block",
-              }}
+              className="company-profile-video"
             />
           </div>
         </section>

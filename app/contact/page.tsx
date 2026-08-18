@@ -27,8 +27,8 @@ export default function Contact() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-            gap: "32px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))",
+            gap: "28px",
             alignItems: "stretch"
           }}
         >
@@ -37,7 +37,7 @@ export default function Contact() {
             style={{
               background: "#ffffff",
               borderRadius: "16px",
-              padding: "36px",
+              padding: "28px 24px",
               border: "1px solid #e5dec9",
               boxShadow: "0 10px 30px rgba(11, 60, 38, 0.06)",
               display: "flex",
