@@ -95,6 +95,8 @@ export default function Home() {
               muted
               playsInline
               controls
+              controlsList="nofullscreen nodownload noremoteplayback"
+              disablePictureInPicture
               style={{
                 width: "350px",
                 height: "350px",

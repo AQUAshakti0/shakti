@@ -3820,6 +3820,15 @@ tr:last-child td {
   color: #e0f2fe !important;
 }
 
+/* Hide video fullscreen control button */
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  overflow: hidden;
+}
+
 
 
 
