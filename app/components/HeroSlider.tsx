@@ -57,6 +57,8 @@ const slides: SlideData[] = [
     ),
     ctaText: "Explore Softeners",
     ctaHref: "/products?tab=softener",
+    image: "/hero/hero_plant_3.png",
+    imageAlt: "Aqua Shakti Industrial Water Softener & DM Plant",
   },
   {
     id: 4,
