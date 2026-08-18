@@ -72,6 +72,8 @@ const slides: SlideData[] = [
     ),
     ctaText: "Explore Commercial",
     ctaHref: "/products?tab=domestic",
+    image: "/hero/hero_plant_4.png",
+    imageAlt: "Aqua Shakti Commercial & Domestic RO Filter System",
   },
   {
     id: 5,
