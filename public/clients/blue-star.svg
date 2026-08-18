@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <rect width="320" height="100" fill="#ffffff" rx="8"/>
+  <g>
+    <!-- Blue Star Star & Text -->
+    <path d="M 60 30 L 64 42 L 76 42 L 67 50 L 70 62 L 60 54 L 50 62 L 53 50 L 44 42 L 56 42 Z" fill="#0284c7" />
+    <text x="180" y="58" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="900" font-size="24" fill="#0369a1" letter-spacing="2">BLUE STAR</text>
+  </g>
+</svg>

@@ -43,8 +43,26 @@ export default function About() {
             and procedures. We have more than 500 customers in Gujarat - India.
           </p>
         </div>
-        <div className="row-img" style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "36px" }}>
-          <img src="/clients/Aquashakti%20logo.png" alt="Aqua Shakti Industries Logo" width={420} height={300} style={{ objectFit: "contain", maxHeight: "270px", width: "auto" }} loading="lazy" />
+        <div className="row-img" style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "20px" }}>
+          <img 
+            src="/logo.png" 
+            alt="Aqua Shakti Industries Logo" 
+            width={420} 
+            height={300} 
+            style={{ 
+              objectFit: "contain", 
+              maxHeight: "260px", 
+              maxWidth: "100%", 
+              width: "auto",
+              height: "auto",
+              background: "#ffffff",
+              padding: "20px 24px",
+              borderRadius: "14px",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+              border: "1px solid #e2e8f0"
+            }} 
+            loading="lazy" 
+          />
         </div>
       </section>
 
