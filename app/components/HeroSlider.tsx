@@ -132,7 +132,7 @@ export default function HeroSlider() {
                     <img
                       src={slide.image}
                       alt={slide.imageAlt || slide.title}
-                      className="hero-plant-img"
+                      className={`hero-plant-img hero-plant-img-${slide.id}`}
                     />
                   </div>
                 )}
