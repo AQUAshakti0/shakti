@@ -10,6 +10,8 @@ interface SlideData {
   subtitle: React.ReactNode;
   ctaText: string;
   ctaHref: string;
+  image: string;
+  imageAlt: string;
 }
 
 const slides: SlideData[] = [
@@ -25,6 +27,8 @@ const slides: SlideData[] = [
     ),
     ctaText: "Let's Start",
     ctaHref: "/contact",
+    image: "/hero/hero_plant.png",
+    imageAlt: "Aqua Shakti Commercial & Industrial RO Plant System",
   },
   {
     id: 2,
@@ -38,6 +42,8 @@ const slides: SlideData[] = [
     ),
     ctaText: "Explore STP & ETP",
     ctaHref: "/products?tab=wastewater",
+    image: "/hero/hero_stp_etp.png",
+    imageAlt: "Wastewater STP and ETP Recycling Plant",
   },
   {
     id: 3,
@@ -51,6 +57,8 @@ const slides: SlideData[] = [
     ),
     ctaText: "Explore Softeners",
     ctaHref: "/products?tab=softener",
+    image: "/hero/hero_softener_dm.png",
+    imageAlt: "Industrial Water Softener & DM Plant",
   },
   {
     id: 4,
@@ -64,6 +72,8 @@ const slides: SlideData[] = [
     ),
     ctaText: "Explore Commercial",
     ctaHref: "/products?tab=domestic",
+    image: "/hero/hero_commercial_ro.png",
+    imageAlt: "Commercial and Domestic RO Water Purifiers",
   },
   {
     id: 5,
@@ -77,6 +87,8 @@ const slides: SlideData[] = [
     ),
     ctaText: "View Chemicals",
     ctaHref: "/chemicals",
+    image: "/hero/hero_chemicals.png",
+    imageAlt: "ASTreat Specialty Water Treatment Chemicals",
   },
 ];
 
@@ -102,17 +114,27 @@ export default function HeroSlider() {
             aria-hidden={!isActive}
           >
             <div className="fade-slide-overlay">
-              <div className="slide-overlay-content">
-                <span className="hero-slide-badge">{slide.tag}</span>
-                <h2>{slide.title}</h2>
-                <p>{slide.subtitle}</p>
-                <div className="hero-btn-group">
-                  <Link href={slide.ctaHref} className="slide-cta-btn">
-                    {slide.ctaText}
-                  </Link>
-                  <Link href="/products" className="slide-sec-btn">
-                    Our Products
-                  </Link>
+              <div className="slide-content-container">
+                <div className="slide-overlay-content">
+                  <span className="hero-slide-badge">{slide.tag}</span>
+                  <h2>{slide.title}</h2>
+                  <p>{slide.subtitle}</p>
+                  <div className="hero-btn-group">
+                    <Link href={slide.ctaHref} className="slide-cta-btn">
+                      {slide.ctaText}
+                    </Link>
+                    <Link href="/products" className="slide-sec-btn">
+                      Our Products
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="slide-overlay-media">
+                  <img
+                    src={slide.image}
+                    alt={slide.imageAlt}
+                    className="hero-plant-img"
+                  />
                 </div>
               </div>
             </div>
