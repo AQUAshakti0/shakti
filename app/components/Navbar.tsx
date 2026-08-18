@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -28,10 +29,24 @@ export default function Navbar() {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    // Reset any opened dropdown when closing/opening main menu
+    if (isOpen) {
+      setOpenDropdown(null);
+    }
   };
 
   const closeMenu = () => {
     setIsOpen(false);
+    setOpenDropdown(null);
+  };
+
+  const handleLinkClick = (link: { name: string; href: string; dropdown?: { name: string; href: string }[] }, e: React.MouseEvent) => {
+    if (link.dropdown && typeof window !== "undefined" && window.innerWidth <= 900) {
+      e.preventDefault();
+      setOpenDropdown((prev) => (prev === link.name ? null : link.name));
+    } else {
+      closeMenu();
+    }
   };
 
   const navLinks = [
@@ -78,6 +93,7 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (link.dropdown && link.dropdown.some((sub) => pathname === sub.href));
               const hasDropdown = !!link.dropdown;
+              const isDropdownOpen = openDropdown === link.name;
 
               return (
                 <li key={link.name} className={hasDropdown ? "has-dropdown" : ""} role="none">
@@ -85,11 +101,11 @@ export default function Navbar() {
                     href={link.href}
                     role="menuitem"
                     className={`nav-link ${isActive ? "active" : ""}`}
-                    onClick={closeMenu}
+                    onClick={(e) => handleLinkClick(link, e)}
                   >
                     {link.name}
                     {hasDropdown && (
-                      <svg className="dropdown-arrow" width="9" height="5" viewBox="0 0 10 6" fill="none" stroke="currentColor">
+                      <svg className={`dropdown-arrow ${isDropdownOpen ? "is-open" : ""}`} width="9" height="5" viewBox="0 0 10 6" fill="none" stroke="currentColor">
                         <path d="M1 1L5 5L9 1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     )}
@@ -115,7 +131,7 @@ export default function Navbar() {
                   </Link>
 
                   {hasDropdown && (
-                    <ul className="dropdown-menu">
+                    <ul className={`dropdown-menu ${isDropdownOpen ? "mobile-open" : ""}`}>
                       {link.dropdown.map((sub) => (
                         <li key={sub.name}>
                           <Link href={sub.href} onClick={closeMenu}>
