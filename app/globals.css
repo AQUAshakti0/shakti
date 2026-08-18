@@ -3247,32 +3247,353 @@ tr:last-child td {
   background-color: #ffffff;
   color: #0369a1;
 }
-
-/* ---- OUR PRODUCTS & SERVICES WATER-COLOR BUTTONS ---- */
-.service-card-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 22px;
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-  color: #ffffff !important;
-  font-size: 13.5px;
-  font-weight: 700;
-  border-radius: 6px;
-  text-decoration: none !important;
-  border: none;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  margin-top: 12px;
-  position: relative;
-  z-index: 3;
+/* ---- OUR PRODUCTS & SERVICES (EXACT MATCH 6-CARD DESIGN SYSTEM) ---- */
+.products-overview-section {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.service-card-btn:hover {
-  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.custom-service-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1.5px solid #edf2f7;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  padding: 22px 20px 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 240px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.custom-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+/* Card variant borders */
+.card-chemicals {
+  border-color: #86efac;
+}
+
+.card-testing-services {
+  border-color: #fed7aa;
+}
+
+/* Top Icons */
+.card-top-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+  margin-bottom: 12px;
+}
+
+.icon-badge-blue {
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+}
+
+.icon-badge-circle-blue {
+  background: #e0f2fe;
+  border-radius: 50%;
+}
+
+.icon-badge-green {
+  background: #dcfce7;
+  border-radius: 50%;
+}
+
+.icon-badge-purple-gear {
+  background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+}
+
+.icon-badge-orange-flask {
+  background: #ffedd5;
+  border-radius: 50%;
+}
+
+/* Card Body Typography */
+.card-main-body {
+  position: relative;
+  z-index: 3;
+  flex-grow: 1;
+}
+
+.service-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.service-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+  max-width: 68%;
+}
+
+.card-blue-dash {
+  width: 28px;
+  height: 3px;
+  background: #0284c7;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+/* Action Row & Buttons */
+.card-action-row {
+  position: relative;
+  z-index: 3;
+  margin-top: auto;
+}
+
+.card-link-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0060df;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.card-link-text:hover {
+  color: #0047ab;
+  transform: translateX(3px);
+}
+
+.link-arrow {
+  font-size: 15px;
+  transition: transform 0.2s ease;
+}
+
+.card-link-text:hover .link-arrow {
+  transform: translateX(4px);
+}
+
+/* Pill Buttons */
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.pill-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.38);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.pill-arrow {
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.pill-btn:hover .pill-arrow {
+  transform: translateX(3px);
+}
+
+.pill-btn-blue {
+  background: #0060df;
   color: #ffffff !important;
+}
+
+.pill-btn-green {
+  background: #65a30d;
+  color: #ffffff !important;
+}
+
+.pill-btn-orange {
+  background: #ea580c;
+  color: #ffffff !important;
+}
+
+/* AMC White Pill Button */
+.pill-btn-white-amc {
+  background: #ffffff;
+  color: #0060df !important;
+  border: 1px solid #e2e8f0;
+  padding: 4px 6px 4px 16px;
+  border-radius: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.pill-btn-white-amc:hover {
+  border-color: #0060df;
+  box-shadow: 0 6px 18px rgba(0, 96, 223, 0.15);
+}
+
+.pill-btn-blue-dot {
+  width: 22px;
+  height: 22px;
+  background: #0060df;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.pill-btn-white-amc:hover .pill-btn-blue-dot {
+  transform: translateX(2px);
+}
+
+/* Card 4 Bottom Wave */
+.card-art-wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: linear-gradient(135deg, #0284c7 0%, #0052cc 100%);
+  clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 16px 12px 0;
+  z-index: 2;
+}
+
+.wave-bottom-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.wave-bottom-btn:hover {
+  transform: translateX(2px);
+}
+
+.wave-btn-circle {
+  width: 26px;
+  height: 26px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Background Artworks */
+.card-art-splash {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 105px;
+  height: 100%;
+  background: url('/cards/art_ro_splash.png') no-repeat right bottom;
+  background-size: contain;
+  pointer-events: none;
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.card-art-wave-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 105px;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 200' preserveAspectRatio='none'%3E%3Cpath fill='%230284c7' d='M25,0 C65,40 15,120 100,200 L100,0 Z' opacity='0.9'/%3E%3Cpath fill='%230052cc' d='M45,0 C85,60 35,140 100,200 L100,0 Z' opacity='0.95'/%3E%3C/svg%3E") no-repeat right top;
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-art-ripple {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 110px;
+  height: 100%;
+  background: url('/cards/art_chem_ripple.png') no-repeat right bottom;
+  background-size: contain;
+  pointer-events: none;
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.card-art-gears {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 105px;
+  height: 100%;
+  background: url('/cards/art_amc_gears.png') no-repeat right bottom;
+  background-size: contain;
+  pointer-events: none;
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.card-art-test-tube {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 110px;
+  height: 100%;
+  background: url('/cards/art_water_testing.png') no-repeat right bottom;
+  background-size: contain;
+  pointer-events: none;
+  opacity: 0.95;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .services-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-cards-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---- CUSTOMER REVIEWS 4-CARD VARIANT STYLES ---- */
