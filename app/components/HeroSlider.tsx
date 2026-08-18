@@ -27,7 +27,7 @@ const slides: SlideData[] = [
     ),
     ctaText: "Let's Start",
     ctaHref: "/contact",
-    image: "/hero/hero_plant.png",
+    image: "/hero/hero_plant_v2.png",
     imageAlt: "Aqua Shakti Commercial & Industrial RO Plant System",
   },
   {
@@ -42,7 +42,7 @@ const slides: SlideData[] = [
     ),
     ctaText: "Explore STP & ETP",
     ctaHref: "/products?tab=wastewater",
-    image: "/hero/hero_plant_2.png",
+    image: "/hero/hero_plant_2_v2.png",
     imageAlt: "Aqua Shakti Wastewater & Industrial RO Plant",
   },
   {
