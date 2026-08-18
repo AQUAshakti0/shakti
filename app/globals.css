@@ -969,30 +969,30 @@ h1, h2, h3, h4, h5, h6 {
   .slide-overlay-media {
     flex: 0 0 auto !important;
     width: 100% !important;
-    height: 220px !important;
-    max-height: 220px !important;
+    height: 245px !important;
+    max-height: 245px !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     padding: 0 !important;
-    margin-bottom: 6px !important;
+    margin-bottom: 8px !important;
     transform: none !important;
     overflow: visible !important;
   }
   .hero-plant-img {
-    width: 95% !important;
-    max-width: 420px !important;
-    height: 215px !important;
-    max-height: 220px !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    height: 240px !important;
+    max-height: 245px !important;
     object-fit: contain !important;
     margin: 0 auto !important;
     display: block !important;
-    transform: scale(1.55) !important;
+    transform: scale(1.8) !important;
     transform-origin: center center !important;
-    filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.55)) !important;
+    filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.55)) !important;
   }
   .hero-plant-img-4 {
-    transform: scale(1.38) !important;
+    transform: scale(1.58) !important;
   }
   .fade-slide .slide-overlay-content {
     flex: 0 0 auto;
@@ -1012,7 +1012,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 6px;
   }
   .fade-slide p {
-    font-size: 12.5px;
+    font-size: 12px;
     line-height: 1.4;
     margin: 0 auto 12px;
     max-width: 100%;
@@ -1034,24 +1034,24 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 480px) {
   .fade-hero-slider {
-    height: 525px !important;
-    min-height: 525px !important;
+    height: 540px !important;
+    min-height: 540px !important;
     border-radius: 8px;
   }
   .slide-overlay-media {
-    height: 205px !important;
-    max-height: 205px !important;
-    margin-bottom: 4px !important;
+    height: 230px !important;
+    max-height: 230px !important;
+    margin-bottom: 6px !important;
   }
   .hero-plant-img {
-    width: 98% !important;
-    max-width: 380px !important;
-    height: 200px !important;
-    max-height: 205px !important;
-    transform: scale(1.65) !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    height: 225px !important;
+    max-height: 230px !important;
+    transform: scale(1.9) !important;
   }
   .hero-plant-img-4 {
-    transform: scale(1.45) !important;
+    transform: scale(1.65) !important;
   }
   .fade-slide h2 {
     font-size: 19.5px;
