@@ -8,13 +8,13 @@ export interface ClientItem {
 }
 
 export const reputedClients: ClientItem[] = [
-  { name: "Nilkamal", logo: "/clients/nilkamal.svg?v=50" },
+  { name: "Nilkamal", logo: "/clients/nilkamal.svg?v=52" },
   { name: "Viral Corporation", logo: "/clients/viral-corporation.svg?v=50" },
   { name: "Vijay Technologies", logo: "/clients/vijay-technologies.svg?v=50" },
   { name: "Pluz Resort", logo: "/clients/pluz-resort.svg?v=50" },
   { name: "Olive Healthcare", logo: "/clients/olive-healthcare.svg?v=50" },
   { name: "Chhaparia Group", logo: "/clients/chhaparia-group.svg?v=50" },
-  { name: "Blue Star", logo: "/clients/blue-star.svg?v=50" },
+  { name: "Blue Star", logo: "/clients/blue-star.svg?v=52" },
   { name: "K Krish", logo: "/clients/k-krish.svg?v=50" },
   { name: "Lords Hotels & Resorts", logo: "/clients/lords-hotels.svg?v=50" },
   { name: "Parekh Aluminex Limited", logo: "/clients/parekh-aluminex.svg?v=50" },
