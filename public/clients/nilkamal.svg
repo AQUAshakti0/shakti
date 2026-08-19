@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <rect width="320" height="100" fill="#ffffff" rx="8"/>
+  <g transform="translate(40, 20)">
+    <!-- Nilkamal Text in signature brand Red -->
+    <text x="120" y="44" text-anchor="middle" font-family="'Arial Black', 'Inter', sans-serif" font-weight="900" font-size="34" fill="#d91b24" letter-spacing="1">Nilkamal</text>
+  </g>
+</svg>
