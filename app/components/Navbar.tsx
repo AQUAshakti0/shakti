@@ -71,8 +71,16 @@ export default function Navbar() {
   return (
     <header className={`site-header ${isScrolled ? "is-scrolled" : ""}`}>
       <nav className="topbar" aria-label="Main navigation">
-        {/* Left: Brand Title */}
+        {/* Left: Brand Logo & Title */}
         <Link href="/" className="topbar-left" aria-label="Aqua Shakti Industries - Home" onClick={closeMenu}>
+          <img
+            src="/logo.png?v=20"
+            alt="Aqua Shakti Industries Logo"
+            className="topbar-logo"
+            width={48}
+            height={48}
+            loading="eager"
+          />
           <div className="topbar-brand">
             AQUASHAKTI
             <span className="watercolor-text">INDUSTRIES PRIVATE LIMITED</span>
