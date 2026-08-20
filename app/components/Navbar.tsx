@@ -74,7 +74,7 @@ export default function Navbar() {
         {/* Left: Brand Logo & Title */}
         <Link href="/" className="topbar-left" aria-label="Aqua Shakti Industries - Home" onClick={closeMenu}>
           <img
-            src="/logo.png?v=2"
+            src="/logo.png?v=3"
             alt="Aqua Shakti Industries Logo"
             className="topbar-logo"
             width={44}

@@ -44,7 +44,7 @@ export default function About() {
           </p>
         </div>
         <div className="row-img" style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "36px" }}>
-          <img src="/clients/Aquashakti%20logo.png" alt="Aqua Shakti Industries Logo" width={420} height={300} style={{ objectFit: "contain", maxHeight: "270px", width: "auto" }} loading="lazy" />
+          <img src="/logo.png?v=3" alt="Aqua Shakti Industries Logo" width={420} height={300} style={{ objectFit: "contain", maxHeight: "270px", width: "auto" }} loading="lazy" />
         </div>
       </section>
 
