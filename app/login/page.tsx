@@ -484,23 +484,21 @@ export default function LoginPage() {
           <div style={{ textAlign: "center", width: "100%", zIndex: 2 }}>
             <div
               style={{
-                width: "72px",
-                height: "72px",
+                width: "60px",
+                height: "60px",
                 borderRadius: "50%",
-                background: "#0b3c26",
+                background: "linear-gradient(135deg, #0b3c26 0%, #15803d 100%)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 margin: "0 auto 16px auto",
                 boxShadow: "0 8px 20px rgba(11, 60, 38, 0.2)",
-                padding: "8px"
               }}
             >
-              <img
-                src="/logo.png?v=10"
-                alt="Aqua Shakti Logo"
-                style={{ width: "100%", height: "100%", objectFit: "contain" }}
-              />
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
             </div>
 
             <div

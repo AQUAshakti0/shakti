@@ -27,7 +27,7 @@ const homeJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Aqua Shakti Industries",
-  image: "https://www.aquashakti.in/logo.png",
+  image: "https://www.aquashakti.in/ro-plant.png",
   url: "https://www.aquashakti.in",
   telephone: "+91-6356008844",
   email: "info@aquashaktiipl.com",

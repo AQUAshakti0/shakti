@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.png",
-        width: 800,
-        height: 600,
-        alt: "Aqua Shakti Industries Logo",
+        url: "/ro-plant.png",
+        width: 1200,
+        height: 630,
+        alt: "Aqua Shakti Industries - Water Treatment Plants",
       },
     ],
   },
@@ -68,7 +68,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Aqua Shakti Industries",
-  "image": "https://www.aquashakti.in/logo.png",
+  "image": "https://www.aquashakti.in/ro-plant.png",
   "@id": "https://www.aquashakti.in",
   "url": "https://www.aquashakti.in",
   "telephone": "+916356008844",
@@ -118,7 +118,6 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        <link rel="icon" href="/logo.png?v=10" sizes="any" />
         <meta name="theme-color" content="#1a5fb4" />
         <meta name="geo.region" content="IN-GJ" />
         <meta name="geo.placename" content="Vapi, Gujarat" />
@@ -154,10 +153,9 @@ export default function RootLayout({
           </section>
 
           <footer className="site-footer" role="contentinfo">
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <img src="/logo.png?v=10" alt="Aqua Shakti Logo" width={28} height={28} style={{ width: "28px", height: "28px", objectFit: "contain", borderRadius: "50%" }} loading="lazy" />
-              <span style={{ fontWeight: 700, color: "#0b3c26", letterSpacing: "0.5px" }}>Aqua Shakti Industries Pvt. Ltd.</span>
-            </div>
+            <span style={{ fontWeight: 700, color: "#0b3c26", letterSpacing: "0.5px" }}>
+              Aqua Shakti Industries Pvt. Ltd.
+            </span>
             <span>
               &copy; 2007–{new Date().getFullYear()} Aqua Shakti Industries. All rights reserved.
               <span style={{ margin: "0 8px" }}>|</span>

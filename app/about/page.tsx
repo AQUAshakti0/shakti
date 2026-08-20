@@ -19,33 +19,28 @@ export default function About() {
     <div className="page-content">
       <h1 className="page-title">About Us</h1>
 
-      <section className="row">
-        <div className="row-text">
-          <h2 className="section-heading">Company Profile</h2>
-          <p className="text-block">
-            Established in the year 2007, in Vapi, Valsad (Gujarat, India) Aqua Shakti Industries 
-            An ISO 9001:2015 certified company is known to be one of the leading manufacturer, 
-            supplier and service provider of all kinds of Water Treatment Plants. By focusing our 
-            attention on the fulfillment of the exact needs of the customers, we have been able to 
-            carve a niche for ourselves in the industry.
-          </p>
-          <p className="text-block">
-            Our products are widely acknowledged for their easy installation, minimal maintenance 
-            requirements and high efficiency. Our services are rendered by industry experts as per 
-            the requirements of the customers and are concluded within the given time frame. Our 
-            qualified engineers are involved in developing innovative and economical product by 
-            using advance technology.
-          </p>
-          <p className="text-block">
-            We are committed to achieve excellence in all department of our business. Our focus 
-            to make customer satisfaction with our product and services. Our objective is to make 
-            continuous improvement in the quality of our product through updating our technology 
-            and procedures. We have more than 500 customers in Gujarat - India.
-          </p>
-        </div>
-        <div className="row-img" style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "36px" }}>
-          <img src="/logo.png?v=10" alt="Aqua Shakti Industries Logo" width={320} height={320} style={{ objectFit: "contain", maxHeight: "280px", maxWidth: "100%", width: "auto", filter: "drop-shadow(0 10px 25px rgba(11, 60, 38, 0.15))" }} loading="lazy" />
-        </div>
+      <section style={{ marginBottom: "40px" }}>
+        <h2 className="section-heading">Company Profile</h2>
+        <p className="text-block">
+          Established in the year 2007, in Vapi, Valsad (Gujarat, India) Aqua Shakti Industries 
+          An ISO 9001:2015 certified company is known to be one of the leading manufacturer, 
+          supplier and service provider of all kinds of Water Treatment Plants. By focusing our 
+          attention on the fulfillment of the exact needs of the customers, we have been able to 
+          carve a niche for ourselves in the industry.
+        </p>
+        <p className="text-block">
+          Our products are widely acknowledged for their easy installation, minimal maintenance 
+          requirements and high efficiency. Our services are rendered by industry experts as per 
+          the requirements of the customers and are concluded within the given time frame. Our 
+          qualified engineers are involved in developing innovative and economical product by 
+          using advance technology.
+        </p>
+        <p className="text-block">
+          We are committed to achieve excellence in all department of our business. Our focus 
+          to make customer satisfaction with our product and services. Our objective is to make 
+          continuous improvement in the quality of our product through updating our technology 
+          and procedures. We have more than 500 customers in Gujarat - India.
+        </p>
       </section>
 
       <section className="row row-reverse">
