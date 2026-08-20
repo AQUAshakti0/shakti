@@ -45,7 +45,7 @@ export default function About() {
         </div>
         <div className="row-img" style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "24px" }}>
           <img
-            src="/logo.png?v=20"
+            src="/logo.png?v=25"
             alt="Aqua Shakti Industries Pvt. Ltd. Official Logo"
             width={340}
             height={340}

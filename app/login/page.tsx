@@ -496,7 +496,7 @@ export default function LoginPage() {
               }}
             >
               <img
-                src="/logo.png?v=20"
+                src="/logo.png?v=25"
                 alt="Aqua Shakti Industries Pvt. Ltd."
                 style={{ width: "100%", height: "100%", objectFit: "contain" }}
               />

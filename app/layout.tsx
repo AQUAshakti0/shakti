@@ -118,7 +118,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        <link rel="icon" href="/logo.png?v=20" sizes="any" />
+        <link rel="icon" href="/logo.png?v=25" sizes="any" />
         <meta name="theme-color" content="#1a5fb4" />
         <meta name="geo.region" content="IN-GJ" />
         <meta name="geo.placename" content="Vapi, Gujarat" />
@@ -156,7 +156,7 @@ export default function RootLayout({
           <footer className="site-footer" role="contentinfo">
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <img
-                src="/logo.png?v=20"
+                src="/logo.png?v=25"
                 alt="Aqua Shakti Industries Pvt. Ltd."
                 width={28}
                 height={28}
