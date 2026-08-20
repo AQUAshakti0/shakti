@@ -159,7 +159,7 @@ export default function BlogsPage() {
     readTime: "5 min read",
     image: "/ro-plant.png",
     excerpt: "",
-    htmlContent: "<p>Write your blog post here using the <strong>React Quill</strong> editor!</p>"
+    htmlContent: "<p>Write your blog post here using the <strong>Rich Text</strong> editor!</p>"
   });
 
   // Cleanup admin session on mount
@@ -237,7 +237,7 @@ export default function BlogsPage() {
       readTime: "5 min read",
       image: "/ro-plant.png",
       excerpt: "",
-      htmlContent: "<h2>Technical Guide Title</h2><p>Compose your detailed technical blog post using <strong>React Quill</strong> rich text editor...</p><h3>Key Highlights</h3><ul><li>Highlight 1</li><li>Highlight 2</li></ul>"
+      htmlContent: "<h2>Technical Guide Title</h2><p>Compose your detailed technical blog post using rich text formatting, bullet points, and tables...</p><h3>Key Highlights</h3><ul><li>Highlight 1</li><li>Highlight 2</li></ul>"
     });
     setIsEditorOpen(true);
   };
@@ -352,7 +352,7 @@ export default function BlogsPage() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M12 5v14M5 12h14" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Write Blog Post (React Quill)
+              Write Blog Post
             </button>
           </div>
         </div>
@@ -490,7 +490,7 @@ export default function BlogsPage() {
                 Admin Authentication Required
               </h2>
               <p style={{ textAlign: "center", fontSize: "13.5px", color: "#64748b", margin: "0 0 20px 0", lineHeight: 1.5 }}>
-                Log in with your administrator credentials to access the <strong>React Quill</strong> Blog Post Editor.
+                Log in with your administrator credentials to access the <strong>Blog Post Editor</strong>.
               </p>
 
               {/* Demo Hint Box */}
@@ -666,7 +666,7 @@ export default function BlogsPage() {
                     cursor: "pointer"
                   }}
                 >
-                  ✏️ Edit Post (React Quill)
+                  ✏️ Edit Post
                 </button>
               </div>
             </div>
@@ -729,7 +729,7 @@ export default function BlogsPage() {
 
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
                 <span style={{ background: "#0b3c26", color: "#f59e0b", fontSize: "11px", fontWeight: 800, padding: "4px 8px", borderRadius: "4px", textTransform: "uppercase" }}>
-                  React Quill Enabled
+                  Rich Text Editor
                 </span>
                 <span style={{ fontSize: "13px", color: "#64748b" }}>Admin Blog Creator</span>
               </div>
@@ -830,7 +830,7 @@ export default function BlogsPage() {
 
                 <div>
                   <label style={{ display: "block", fontSize: "13px", fontWeight: 600, color: "#334155", marginBottom: "6px" }}>
-                    Rich Text Content (React Quill)
+                    Article Content
                   </label>
                   <ReactQuillEditor
                     value={formData.htmlContent}
