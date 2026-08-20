@@ -9,7 +9,7 @@ import ReputedClients from "./components/ReputedClients";
 export const metadata: Metadata = {
   title: "Industrial Water Treatment Plants, RO, STP, ETP & Chemicals",
   description:
-    "Explore Aqua Shakti Industries' complete range: Industrial RO Plants, STP, ETP, Boiler Plants, Water Softeners, DM Plants, Domestic RO Systems & Water Treatment Chemicals. 500+ customers in Gujarat since 2007.",
+    "Explore Aqua Shakti Industries' complete range: Industrial RO Plants, STP, ETP, Boiler Plants, Water Softeners, DM Plants, Spares & Water Treatment Chemicals. 500+ customers in Gujarat since 2007.",
   alternates: {
     canonical: "/",
   },
@@ -176,21 +176,21 @@ export default function Home() {
               <div className="card-art-ripple" />
             </article>
 
-            {/* Card 4: Domestic RO Systems */}
-            <article className="custom-service-card card-domestic-ro">
+            {/* Card 4: Water Softeners & DM Plants */}
+            <article className="custom-service-card card-softener-dm">
               <div className="card-top-icon icon-badge-blue">
                 <svg viewBox="0 0 24 24" width="22" height="22" fill="#0284c7">
-                  <path d="M4 6h16v2H4V6zm2 4h12v2H6v-2zm-3 4h18v2H3v-2zm5 4h8v2H8v-2z" />
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
                 </svg>
               </div>
               <div className="card-main-body">
-                <h3 className="service-title">Domestic RO Systems</h3>
+                <h3 className="service-title">Softeners &amp; DM Plants</h3>
                 <p className="service-desc">
-                  RO + UV + Alkaline solutions for safe &amp; healthy drinking water at home.
+                  Industrial water softeners, demineralization &amp; mixbed plants for scale-free pure water.
                 </p>
               </div>
               <div className="card-art-wave-bottom">
-                <Link href="/products?tab=domestic" className="wave-bottom-btn">
+                <Link href="/products?tab=softener" className="wave-bottom-btn">
                   <span>Explore More</span>
                   <span className="wave-btn-circle">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#0047ab" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

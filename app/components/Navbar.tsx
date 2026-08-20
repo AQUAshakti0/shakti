@@ -59,7 +59,6 @@ export default function Navbar() {
         { name: "Industrial RO Plants", href: "/products?tab=ro" },
         { name: "STP & ETP Wastewater", href: "/products?tab=wastewater" },
         { name: "Softeners & DM Plants", href: "/products?tab=softener" },
-        { name: "Domestic & Commercial RO", href: "/products?tab=domestic" },
         { name: "Components & Spare Parts", href: "/products?tab=spares" },
         { name: "Water Treatment Chemicals", href: "/chemicals" },
       ],

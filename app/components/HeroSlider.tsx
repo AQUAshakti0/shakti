@@ -62,18 +62,18 @@ const slides: SlideData[] = [
   },
   {
     id: 4,
-    tag: "COMMERCIAL & DOMESTIC DRINKING WATER",
-    title: "Commercial & Domestic RO Systems",
+    tag: "INDUSTRIAL SPARES & PLANT COMPONENTS",
+    title: "RO Membranes, Pumps & Spares",
     subtitle: (
       <>
-        Alkaline RO+UV purifiers &amp; chilled water dispensers<br />
-        engineered for corporate offices, hostels, restaurants &amp; modern homes.
+        Genuine DOW / Hydranautics membranes, vertical multistage pumps,<br />
+        FRP pressure vessels &amp; automatic multiport valves in ready stock.
       </>
     ),
-    ctaText: "Explore Commercial",
-    ctaHref: "/products?tab=domestic",
+    ctaText: "Explore Spares",
+    ctaHref: "/products?tab=spares",
     image: "/hero/hero_plant_4.png",
-    imageAlt: "Aqua Shakti Commercial & Domestic RO Filter System",
+    imageAlt: "Aqua Shakti Industrial RO Membranes & Spare Parts",
   },
   {
     id: 5,

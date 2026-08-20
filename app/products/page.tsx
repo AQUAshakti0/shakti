@@ -4,12 +4,10 @@ import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
-import { domesticProductsData } from "./domesticProductsData";
-
 export interface ProductDetail {
   id: string;
   name: string;
-  category: "ro" | "wastewater" | "softener" | "domestic" | "spares";
+  category: "ro" | "wastewater" | "softener" | "spares";
   categoryLabel: string;
   badge: string;
   image: string;
@@ -81,9 +79,9 @@ const industrialProductsData: ProductDetail[] = [
     capacity: "10 KLD – 500 KLD",
     recoveryRate: "As per plant Design",
     automation: "Automatic Operation",
-    applications: "Hotels, Housing Societies, Hostels, Malls",
-    shortDesc: "Packaged & underground MBBR / SBR sewage treatment plants that convert domestic wastewater into crystal clear water for gardening & flushing.",
-    fullDesc: "Aqua Shakti STPs utilize Moving Bed Biofilm Reactor (MBBR) and Sequential Batch Reactor (SBR) technology to treat domestic sewage efficiently with minimal footprint, low energy use, and zero foul odour.",
+    applications: "Hotels, Commercial Complexes, Hostels, Malls",
+    shortDesc: "Packaged & underground MBBR / SBR sewage treatment plants that convert wastewater into crystal clear water for gardening & flushing.",
+    fullDesc: "Aqua Shakti STPs utilize Moving Bed Biofilm Reactor (MBBR) and Sequential Batch Reactor (SBR) technology to treat sewage efficiently with minimal footprint, low energy use, and zero foul odour.",
     features: ["MBBR / MBR Advanced Bio-Media", "Compact Packaged Design", "Zero Foul Odour & Quiet Operation", "Recycled Water for Flushing"],
     specs: [
       { label: "Biological Technology", value: "MBBR (Moving Bed Biofilm Reactor)" },
@@ -136,7 +134,7 @@ const industrialProductsData: ProductDetail[] = [
   {
     id: "ro-plant-25lph",
     name: "25 LPH Commercial RO Plant",
-    category: "domestic",
+    category: "ro",
     categoryLabel: "Commercial RO",
     badge: "25 LPH Capacity",
     image: "/products/industrial/ro-plant-25lph.png",
@@ -158,7 +156,7 @@ const industrialProductsData: ProductDetail[] = [
   {
     id: "ro-plant-50lph",
     name: "50 LPH Commercial RO Plant",
-    category: "domestic",
+    category: "ro",
     categoryLabel: "Commercial RO",
     badge: "50 LPH Capacity",
     image: "/products/industrial/ro-plant-50lph.png",
@@ -245,10 +243,7 @@ const industrialProductsData: ProductDetail[] = [
   }
 ];
 
-export const productsData: ProductDetail[] = [
-  ...industrialProductsData,
-  ...domesticProductsData
-];
+export const productsData: ProductDetail[] = industrialProductsData;
 
 export const sparePartsData = [
   { name: "Pressure Gauge", image: "/spares/pressure-gauge.png", desc: "SS304 Glycerin filled high-accuracy pressure gauges." },
@@ -322,7 +317,6 @@ function ProductsContent() {
           { id: "ro", label: "Industrial RO Plants" },
           { id: "wastewater", label: "STP & ETP Wastewater" },
           { id: "softener", label: "Softeners & DM Plants" },
-          { id: "domestic", label: "Domestic & Commercial RO" },
           { id: "spares", label: "Components & Spare Parts" }
         ].map((tab) => (
           <button
@@ -372,8 +366,8 @@ function ProductsContent() {
                   style={{
                     width: "100%",
                     height: "100%",
-                    objectFit: product.category === "domestic" ? "contain" : "cover",
-                    padding: product.category === "domestic" ? "12px" : "0"
+                    objectFit: "contain",
+                    padding: "8px"
                   }}
                 />
                 <span style={{ position: "absolute", bottom: "12px", left: "12px", background: "rgba(255, 255, 255, 0.95)", backdropFilter: "blur(4px)", color: "#0284c7", fontSize: "11px", fontWeight: 800, padding: "3px 10px", borderRadius: "12px", textTransform: "uppercase" }}>
