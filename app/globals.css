@@ -4048,7 +4048,7 @@ video::-webkit-media-controls-enclosure {
 }
 
 /* ---- SCROLL REVEAL ANIMATIONS (FLUID ON-SCROLL REVEAL SYSTEM) ---- */
-.reveal-init {
+[data-reveal="init"] {
   opacity: 0;
   transform: translateY(32px);
   transition: 
@@ -4057,34 +4057,34 @@ video::-webkit-media-controls-enclosure {
   will-change: opacity, transform;
 }
 
-.reveal-init.is-revealed {
+[data-reveal="init"][data-reveal-visible="true"] {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Maintain hover transforms cleanly once revealed */
-.custom-service-card.reveal-init.is-revealed:hover {
+.custom-service-card[data-reveal-visible="true"]:hover {
   transform: translateY(-5px);
 }
 
-.stat-item-card.reveal-init.is-revealed:hover {
+.stat-item-card[data-reveal-visible="true"]:hover {
   transform: translateY(-2px);
 }
 
-.client-logo-card.reveal-init.is-revealed:hover {
+.client-logo-card[data-reveal-visible="true"]:hover {
   transform: translateY(-4px) scale(1.02);
 }
 
-.product-card-hover.reveal-init.is-revealed:hover {
+.product-card-hover[data-reveal-visible="true"]:hover {
   transform: translateY(-4px);
 }
 
-.blog-card.reveal-init.is-revealed:hover {
+.blog-card[data-reveal-visible="true"]:hover {
   transform: translateY(-4px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal-init {
+  [data-reveal="init"] {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
